@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu1eshca13ovn"]
+
+[ext_resource type="Script" uid="uid://byx3j6wqc4skd" path="res://_System/SafeZoneContainer/safe_zone_container.gd" id="1_cdfqp"]
+
+[node name="SafeZoneContainer" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_cdfqp")
