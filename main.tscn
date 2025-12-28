@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqaw32aqudvwb"]
+
+[ext_resource type="Texture2D" uid="uid://1o7wvfa15rv8" path="res://Data/Images/_default_wallpaper.png" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://byx3j6wqc4skd" path="res://_System/SafeZoneContainer/safe_zone_container.gd" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cl406pxpjjv11" path="res://_System/StatusBar/status_bar.tscn" id="3_h2yge"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="NotificationPupup" type="Panel" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NavigationBar" type="HBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Wallpaper" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ig7tw")
+
+[node name="SafeZone" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_0xm2m")
+metadata/_custom_type_script = "uid://byx3j6wqc4skd"
+
+[node name="MainLayout" type="VBoxContainer" parent="SafeZone"]
+layout_mode = 2
+
+[node name="StatusBar" parent="SafeZone/MainLayout" instance=ExtResource("3_h2yge")]
+layout_mode = 2
+
+[node name="AppContainer" type="Control" parent="SafeZone/MainLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BottomBar" type="PanelContainer" parent="SafeZone/MainLayout"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0xm2m")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SafeZone/MainLayout/BottomBar"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="SafeZone/MainLayout/BottomBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Back"
+
+[node name="HomeButton" type="Button" parent="SafeZone/MainLayout/BottomBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Home"
+
+[node name="RecentButton3" type="Button" parent="SafeZone/MainLayout/BottomBar/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Recent"
