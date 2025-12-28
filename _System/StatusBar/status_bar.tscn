@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl406pxpjjv11"]
+
+[ext_resource type="Script" uid="uid://b67bnywm1tplc" path="res://_System/StatusBar/status_bar.gd" id="1_spint"]
+
+[node name="StatusBar" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 60)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+script = ExtResource("1_spint")
+
+[node name="ClockTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="ClockLabel" type="Label" parent="."]
+layout_mode = 2
+text = "12:00"
+horizontal_alignment = 1
