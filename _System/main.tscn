@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqaw32aqudvwb"]
+[gd_scene load_steps=7 format=3 uid="uid://cqaw32aqudvwb"]
 
-[ext_resource type="Texture2D" uid="uid://1o7wvfa15rv8" path="res://Data/Images/_default_wallpaper.png" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://byx3j6wqc4skd" path="res://_System/SafeZoneContainer/safe_zone_container.gd" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://cl406pxpjjv11" path="res://_System/StatusBar/status_bar.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://cnl5785aty0nt" path="res://_System/main.gd" id="1_dft58"]
+[ext_resource type="Texture2D" uid="uid://1o7wvfa15rv8" path="res://Data/Images/_default_wallpaper.png" id="1_jpee4"]
+[ext_resource type="Script" uid="uid://byx3j6wqc4skd" path="res://_System/SafeZoneContainer/safe_zone_container.gd" id="2_dft58"]
+[ext_resource type="PackedScene" uid="uid://cl406pxpjjv11" path="res://_System/StatusBar/status_bar.tscn" id="3_dnpl7"]
+[ext_resource type="PackedScene" uid="uid://dxh4bc7d5x1sv" path="res://Apps/0_Home/home_app.tscn" id="4_w0imb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
 bg_color = Color(0, 0, 0, 1)
@@ -14,6 +16,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dft58")
+home_scene = ExtResource("4_w0imb")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -32,7 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ig7tw")
+texture = ExtResource("1_jpee4")
 
 [node name="SafeZone" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -41,18 +45,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_0xm2m")
+script = ExtResource("2_dft58")
 metadata/_custom_type_script = "uid://byx3j6wqc4skd"
 
 [node name="MainLayout" type="VBoxContainer" parent="SafeZone"]
 layout_mode = 2
 
-[node name="StatusBar" parent="SafeZone/MainLayout" instance=ExtResource("3_h2yge")]
+[node name="StatusBar" parent="SafeZone/MainLayout" instance=ExtResource("3_dnpl7")]
 layout_mode = 2
 
 [node name="AppContainer" type="Control" parent="SafeZone/MainLayout"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="HomeApp" parent="SafeZone/MainLayout/AppContainer" instance=ExtResource("4_w0imb")]
+layout_mode = 1
 
 [node name="BottomBar" type="PanelContainer" parent="SafeZone/MainLayout"]
 custom_minimum_size = Vector2(0, 120)
@@ -68,6 +76,7 @@ size_flags_horizontal = 3
 text = "Back"
 
 [node name="HomeButton" type="Button" parent="SafeZone/MainLayout/BottomBar/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Home"

@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-AppManager="*res://_System/_Autoloads/app_manager.gd"
 GlobalClock="*res://_System/_Autoloads/global_clock.gd"
+SignalBus="*res://_System/_Autoloads/signal_bus.gd"
 
 [debug]
 
