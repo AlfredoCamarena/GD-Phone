@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxh4bc7d5x1sv"]
+[gd_scene load_steps=2 format=3 uid="uid://dxh4bc7d5x1sv"]
 
 [ext_resource type="PackedScene" uid="uid://cudkmk2hvfj57" path="res://Prefabs/AppIcon/app_icon.tscn" id="1_23q5x"]
-[ext_resource type="PackedScene" uid="uid://mfr371hjogct" path="res://Apps/1_Chat/chat_app.tscn" id="2_4h0ds"]
 
 [node name="HomeApp" type="MarginContainer"]
 anchors_preset = 15
@@ -24,28 +23,23 @@ columns = 4
 layout_mode = 2
 size_flags_horizontal = 3
 app_name = "Chat"
-app_scene = ExtResource("2_4h0ds")
 
 [node name="AppIcon2" parent="GridContainer" instance=ExtResource("1_23q5x")]
 layout_mode = 2
 size_flags_horizontal = 3
 app_name = "Chat"
-app_scene = ExtResource("2_4h0ds")
 
 [node name="AppIcon3" parent="GridContainer" instance=ExtResource("1_23q5x")]
 layout_mode = 2
 size_flags_horizontal = 3
 app_name = "Chat"
-app_scene = ExtResource("2_4h0ds")
 
 [node name="AppIcon4" parent="GridContainer" instance=ExtResource("1_23q5x")]
 layout_mode = 2
 size_flags_horizontal = 3
 app_name = "Chat"
-app_scene = ExtResource("2_4h0ds")
 
 [node name="AppIcon5" parent="GridContainer" instance=ExtResource("1_23q5x")]
 layout_mode = 2
 size_flags_horizontal = 3
 app_name = "Chat"
-app_scene = ExtResource("2_4h0ds")
