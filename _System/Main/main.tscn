@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cqaw32aqudvwb"]
 
-[ext_resource type="Script" uid="uid://cnl5785aty0nt" path="res://_System/main.gd" id="1_dft58"]
+[ext_resource type="Script" uid="uid://cnl5785aty0nt" path="res://_System/Main/main.gd" id="1_dft58"]
 [ext_resource type="Texture2D" uid="uid://1o7wvfa15rv8" path="res://Data/Images/_default_wallpaper.png" id="1_jpee4"]
 [ext_resource type="Script" uid="uid://byx3j6wqc4skd" path="res://_System/SafeZoneContainer/safe_zone_container.gd" id="2_dft58"]
 [ext_resource type="PackedScene" uid="uid://cl406pxpjjv11" path="res://_System/StatusBar/status_bar.tscn" id="3_dnpl7"]
