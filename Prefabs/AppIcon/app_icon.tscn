@@ -7,6 +7,7 @@ custom_minimum_size = Vector2(200, 220)
 offset_right = 8.0
 offset_bottom = 8.0
 size_flags_horizontal = 3
+focus_mode = 0
 disabled = true
 flat = true
 icon_alignment = 1
