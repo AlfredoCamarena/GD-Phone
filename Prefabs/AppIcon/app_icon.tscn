@@ -1,37 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://cudkmk2hvfj57"]
+[gd_scene load_steps=2 format=3 uid="uid://cudkmk2hvfj57"]
 
 [ext_resource type="Script" uid="uid://b8kpa6q7v1l80" path="res://Prefabs/AppIcon/app_icon.gd" id="1_efdvt"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2n6hx"]
 
 [node name="AppIcon" type="Button"]
 custom_minimum_size = Vector2(200, 220)
 offset_right = 8.0
 offset_bottom = 8.0
-size_flags_horizontal = 0
+size_flags_horizontal = 3
+disabled = true
 flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
 script = ExtResource("1_efdvt")
-
-[node name="IconImg" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -90.0
-offset_right = 90.0
-offset_bottom = 180.0
-grow_horizontal = 2
-texture = SubResource("PlaceholderTexture2D_2n6hx")
-expand_mode = 1
-
-[node name="NameLabel" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -23.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "App"
-horizontal_alignment = 1

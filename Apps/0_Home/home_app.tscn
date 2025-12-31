@@ -1,45 +1,89 @@
-[gd_scene load_steps=2 format=3 uid="uid://dxh4bc7d5x1sv"]
+[gd_scene load_steps=7 format=3 uid="uid://dxh4bc7d5x1sv"]
 
 [ext_resource type="PackedScene" uid="uid://cudkmk2hvfj57" path="res://Prefabs/AppIcon/app_icon.tscn" id="1_23q5x"]
+[ext_resource type="Texture2D" uid="uid://mxrcjhfkf1o7" path="res://_Assets/App Icons 256x265/message_app_icon.png" id="2_4h0ds"]
+[ext_resource type="Texture2D" uid="uid://cmc8b48g7y2p" path="res://_Assets/App Icons 256x265/phone_app_icon.png" id="3_dqfns"]
+[ext_resource type="Texture2D" uid="uid://bsl4l0x2dt81i" path="res://_Assets/App Icons 256x265/gallery_app_icon.png" id="4_4j4ky"]
+[ext_resource type="Texture2D" uid="uid://c3ljkvgrcrrdr" path="res://_Assets/App Icons 256x265/browser_app_icon.png" id="5_pb8ib"]
+[ext_resource type="Texture2D" uid="uid://b6p0abcgr5qtw" path="res://_Assets/App Icons 256x265/settings_app_icon.png" id="6_iyp04"]
 
-[node name="HomeApp" type="MarginContainer"]
+[node name="Control" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 30
 
-[node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 2
-columns = 4
+[node name="HomeApp" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -448.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+alignment = 2
 
-[node name="AppIcon" parent="GridContainer" instance=ExtResource("1_23q5x")]
+[node name="Row3" type="HBoxContainer" parent="HomeApp"]
 layout_mode = 2
-size_flags_horizontal = 3
-app_name = "Chat"
 
-[node name="AppIcon2" parent="GridContainer" instance=ExtResource("1_23q5x")]
+[node name="AppIcon" parent="HomeApp/Row3" instance=ExtResource("1_23q5x")]
 layout_mode = 2
-size_flags_horizontal = 3
-app_name = "Chat"
 
-[node name="AppIcon3" parent="GridContainer" instance=ExtResource("1_23q5x")]
+[node name="AppIcon2" parent="HomeApp/Row3" instance=ExtResource("1_23q5x")]
 layout_mode = 2
-size_flags_horizontal = 3
-app_name = "Chat"
 
-[node name="AppIcon4" parent="GridContainer" instance=ExtResource("1_23q5x")]
+[node name="AppIcon3" parent="HomeApp/Row3" instance=ExtResource("1_23q5x")]
 layout_mode = 2
-size_flags_horizontal = 3
-app_name = "Chat"
 
-[node name="AppIcon5" parent="GridContainer" instance=ExtResource("1_23q5x")]
+[node name="AppIcon4" parent="HomeApp/Row3" instance=ExtResource("1_23q5x")]
 layout_mode = 2
-size_flags_horizontal = 3
-app_name = "Chat"
+
+[node name="Row2" type="HBoxContainer" parent="HomeApp"]
+layout_mode = 2
+
+[node name="SettingsIcon" parent="HomeApp/Row2" instance=ExtResource("1_23q5x")]
+layout_mode = 2
+disabled = false
+text = "Settings"
+icon = ExtResource("6_iyp04")
+
+[node name="AppIcon" parent="HomeApp/Row2" instance=ExtResource("1_23q5x")]
+layout_mode = 2
+
+[node name="AppIcon2" parent="HomeApp/Row2" instance=ExtResource("1_23q5x")]
+layout_mode = 2
+
+[node name="AppIcon3" parent="HomeApp/Row2" instance=ExtResource("1_23q5x")]
+layout_mode = 2
+
+[node name="Row1" type="HBoxContainer" parent="HomeApp"]
+layout_mode = 2
+
+[node name="MessageIcon" parent="HomeApp/Row1" instance=ExtResource("1_23q5x")]
+layout_mode = 2
+disabled = false
+text = "Message"
+icon = ExtResource("2_4h0ds")
+
+[node name="PhoneIcon" parent="HomeApp/Row1" instance=ExtResource("1_23q5x")]
+layout_mode = 2
+disabled = false
+text = "Phone"
+icon = ExtResource("3_dqfns")
+
+[node name="GalleryIcon" parent="HomeApp/Row1" instance=ExtResource("1_23q5x")]
+layout_mode = 2
+disabled = false
+text = "Gallery"
+icon = ExtResource("4_4j4ky")
+
+[node name="BrowserIcon" parent="HomeApp/Row1" instance=ExtResource("1_23q5x")]
+layout_mode = 2
+disabled = false
+text = "Browser"
+icon = ExtResource("5_pb8ib")
