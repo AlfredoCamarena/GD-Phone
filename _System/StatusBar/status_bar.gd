@@ -1,7 +1,7 @@
 extends PanelContainer
 
 @onready var clock_timer: Timer = $ClockTimer
-@onready var clock_label: Label = $ClockLabel
+@onready var clock_label: Label = %ClockLabel
 
 func _ready() -> void:
 	GlobalClock.time_changed.connect(_update_time)
