@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqaw32aqudvwb"]
+[gd_scene load_steps=10 format=3 uid="uid://cqaw32aqudvwb"]
 
 [ext_resource type="Script" uid="uid://cnl5785aty0nt" path="res://_System/Main/main.gd" id="1_dft58"]
 [ext_resource type="Texture2D" uid="uid://1o7wvfa15rv8" path="res://Data/Images/_default_wallpaper.png" id="1_jpee4"]
 [ext_resource type="Script" uid="uid://byx3j6wqc4skd" path="res://_System/SafeZoneContainer/safe_zone_container.gd" id="2_dft58"]
 [ext_resource type="PackedScene" uid="uid://cl406pxpjjv11" path="res://_System/StatusBar/status_bar.tscn" id="3_dnpl7"]
 [ext_resource type="PackedScene" uid="uid://dxh4bc7d5x1sv" path="res://Apps/0_Home/home_app.tscn" id="4_w0imb"]
+[ext_resource type="Texture2D" uid="uid://ds7ic48ku3bl2" path="res://_Assets/NavBar128x128/nav_back.png" id="6_wsokd"]
+[ext_resource type="Texture2D" uid="uid://bsq86moe1s3yn" path="res://_Assets/NavBar128x128/nav_home.png" id="7_5vu0n"]
+[ext_resource type="Texture2D" uid="uid://c1dsjllm4uigt" path="res://_Assets/NavBar128x128/nav_recent.png" id="8_rhpyp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
 bg_color = Color(0, 0, 0, 1)
@@ -22,21 +25,18 @@ home_scene = ExtResource("4_w0imb")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="NotificationPupup" type="Panel" parent="CanvasLayer"]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="NavigationBar" type="HBoxContainer" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Wallpaper" type="TextureRect" parent="."]
+[node name="UnsafeZoneCover" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_jpee4")
+color = Color(0, 0, 0, 1)
 
 [node name="SafeZone" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -47,6 +47,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_dft58")
 metadata/_custom_type_script = "uid://byx3j6wqc4skd"
+
+[node name="Wallpaper" type="TextureRect" parent="SafeZone"]
+layout_mode = 2
+texture = ExtResource("1_jpee4")
 
 [node name="MainLayout" type="VBoxContainer" parent="SafeZone"]
 layout_mode = 2
@@ -73,15 +77,18 @@ layout_mode = 2
 [node name="BackButton" type="Button" parent="SafeZone/MainLayout/BottomBar/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Back"
+icon = ExtResource("6_wsokd")
+icon_alignment = 1
 
 [node name="HomeButton" type="Button" parent="SafeZone/MainLayout/BottomBar/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Home"
+icon = ExtResource("7_5vu0n")
+icon_alignment = 1
 
 [node name="RecentButton3" type="Button" parent="SafeZone/MainLayout/BottomBar/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Recent"
+icon = ExtResource("8_rhpyp")
+icon_alignment = 1

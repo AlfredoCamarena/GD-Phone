@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://cl406pxpjjv11"]
+[gd_scene load_steps=6 format=3 uid="uid://cl406pxpjjv11"]
 
 [ext_resource type="Script" uid="uid://b67bnywm1tplc" path="res://_System/StatusBar/status_bar.gd" id="1_spint"]
+[ext_resource type="Texture2D" uid="uid://bniffdrglfqkf" path="res://_Assets/StatusBar64x64/battery.png" id="2_k28ht"]
+[ext_resource type="Texture2D" uid="uid://xtp18d4t7mcp" path="res://_Assets/StatusBar64x64/signal_cellular.png" id="2_xivyt"]
+[ext_resource type="Texture2D" uid="uid://cru06mcd5v8p3" path="res://_Assets/StatusBar64x64/wifi.png" id="3_up37j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xivyt"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="StatusBar" type="PanelContainer"]
 custom_minimum_size = Vector2(0, 60)
@@ -8,12 +14,52 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xivyt")
 script = ExtResource("1_spint")
 
 [node name="ClockTimer" type="Timer" parent="."]
 autostart = true
 
-[node name="ClockLabel" type="Label" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="ClockLabel" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
 text = "12:00"
 horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 10
+
+[node name="SignalContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="SignalSprite" type="Sprite2D" parent="MarginContainer/HBoxContainer/SignalContainer"]
+texture = ExtResource("2_xivyt")
+offset = Vector2(32, 32)
+hframes = 4
+
+[node name="WifiContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="WifiIcon" type="Sprite2D" parent="MarginContainer/HBoxContainer/WifiContainer"]
+texture = ExtResource("3_up37j")
+offset = Vector2(32, 32)
+hframes = 2
+
+[node name="BatteryContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="BatterySprite" type="Sprite2D" parent="MarginContainer/HBoxContainer/BatteryContainer"]
+position = Vector2(32, 32)
+texture = ExtResource("2_k28ht")
+hframes = 5
