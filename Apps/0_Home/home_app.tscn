@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxh4bc7d5x1sv"]
+[gd_scene load_steps=8 format=3 uid="uid://dxh4bc7d5x1sv"]
 
 [ext_resource type="PackedScene" uid="uid://cudkmk2hvfj57" path="res://Prefabs/AppIcon/app_icon.tscn" id="1_23q5x"]
 [ext_resource type="Texture2D" uid="uid://mxrcjhfkf1o7" path="res://_Assets/App Icons 256x265/message_app_icon.png" id="2_4h0ds"]
 [ext_resource type="Texture2D" uid="uid://cmc8b48g7y2p" path="res://_Assets/App Icons 256x265/phone_app_icon.png" id="3_dqfns"]
 [ext_resource type="Texture2D" uid="uid://bsl4l0x2dt81i" path="res://_Assets/App Icons 256x265/gallery_app_icon.png" id="4_4j4ky"]
+[ext_resource type="PackedScene" uid="uid://c0lrb1smu1a8w" path="res://Apps/1_Chat/chat_list.tscn" id="4_6o7eo"]
 [ext_resource type="Texture2D" uid="uid://c3ljkvgrcrrdr" path="res://_Assets/App Icons 256x265/browser_app_icon.png" id="5_pb8ib"]
 [ext_resource type="Texture2D" uid="uid://b6p0abcgr5qtw" path="res://_Assets/App Icons 256x265/settings_app_icon.png" id="6_iyp04"]
 
-[node name="Control" type="Control"]
+[node name="HomeApp" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HomeApp" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -28,61 +29,62 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 alignment = 2
 
-[node name="Row3" type="HBoxContainer" parent="HomeApp"]
+[node name="Row3" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="AppIcon" parent="HomeApp/Row3" instance=ExtResource("1_23q5x")]
+[node name="AppIcon" parent="VBoxContainer/Row3" instance=ExtResource("1_23q5x")]
 layout_mode = 2
 
-[node name="AppIcon2" parent="HomeApp/Row3" instance=ExtResource("1_23q5x")]
+[node name="AppIcon2" parent="VBoxContainer/Row3" instance=ExtResource("1_23q5x")]
 layout_mode = 2
 
-[node name="AppIcon3" parent="HomeApp/Row3" instance=ExtResource("1_23q5x")]
+[node name="AppIcon3" parent="VBoxContainer/Row3" instance=ExtResource("1_23q5x")]
 layout_mode = 2
 
-[node name="AppIcon4" parent="HomeApp/Row3" instance=ExtResource("1_23q5x")]
+[node name="AppIcon4" parent="VBoxContainer/Row3" instance=ExtResource("1_23q5x")]
 layout_mode = 2
 
-[node name="Row2" type="HBoxContainer" parent="HomeApp"]
+[node name="Row2" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="SettingsIcon" parent="HomeApp/Row2" instance=ExtResource("1_23q5x")]
+[node name="SettingsIcon" parent="VBoxContainer/Row2" instance=ExtResource("1_23q5x")]
 layout_mode = 2
 disabled = false
 text = "Settings"
 icon = ExtResource("6_iyp04")
 
-[node name="AppIcon" parent="HomeApp/Row2" instance=ExtResource("1_23q5x")]
+[node name="AppIcon" parent="VBoxContainer/Row2" instance=ExtResource("1_23q5x")]
 layout_mode = 2
 
-[node name="AppIcon2" parent="HomeApp/Row2" instance=ExtResource("1_23q5x")]
+[node name="AppIcon2" parent="VBoxContainer/Row2" instance=ExtResource("1_23q5x")]
 layout_mode = 2
 
-[node name="AppIcon3" parent="HomeApp/Row2" instance=ExtResource("1_23q5x")]
+[node name="AppIcon3" parent="VBoxContainer/Row2" instance=ExtResource("1_23q5x")]
 layout_mode = 2
 
-[node name="Row1" type="HBoxContainer" parent="HomeApp"]
+[node name="Row1" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="MessageIcon" parent="HomeApp/Row1" instance=ExtResource("1_23q5x")]
+[node name="MessageIcon" parent="VBoxContainer/Row1" instance=ExtResource("1_23q5x")]
 layout_mode = 2
 disabled = false
 text = "Message"
 icon = ExtResource("2_4h0ds")
+app_scene = ExtResource("4_6o7eo")
 
-[node name="PhoneIcon" parent="HomeApp/Row1" instance=ExtResource("1_23q5x")]
+[node name="PhoneIcon" parent="VBoxContainer/Row1" instance=ExtResource("1_23q5x")]
 layout_mode = 2
 disabled = false
 text = "Phone"
 icon = ExtResource("3_dqfns")
 
-[node name="GalleryIcon" parent="HomeApp/Row1" instance=ExtResource("1_23q5x")]
+[node name="GalleryIcon" parent="VBoxContainer/Row1" instance=ExtResource("1_23q5x")]
 layout_mode = 2
 disabled = false
 text = "Gallery"
 icon = ExtResource("4_4j4ky")
 
-[node name="BrowserIcon" parent="HomeApp/Row1" instance=ExtResource("1_23q5x")]
+[node name="BrowserIcon" parent="VBoxContainer/Row1" instance=ExtResource("1_23q5x")]
 layout_mode = 2
 disabled = false
 text = "Browser"
