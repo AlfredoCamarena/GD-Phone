@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://dxh4bc7d5x1sv"]
 
-[ext_resource type="PackedScene" uid="uid://cudkmk2hvfj57" path="res://Prefabs/AppIcon/app_icon.tscn" id="1_23q5x"]
+[ext_resource type="PackedScene" uid="uid://cudkmk2hvfj57" path="res://Apps/0_Home/AppIcon/app_icon.tscn" id="1_23q5x"]
 [ext_resource type="Texture2D" uid="uid://mxrcjhfkf1o7" path="res://_Assets/App Icons 256x265/message_app_icon.png" id="2_4h0ds"]
 [ext_resource type="Texture2D" uid="uid://cmc8b48g7y2p" path="res://_Assets/App Icons 256x265/phone_app_icon.png" id="3_dqfns"]
 [ext_resource type="Texture2D" uid="uid://bsl4l0x2dt81i" path="res://_Assets/App Icons 256x265/gallery_app_icon.png" id="4_4j4ky"]
-[ext_resource type="PackedScene" uid="uid://c0lrb1smu1a8w" path="res://Apps/1_Chat/chat_list.tscn" id="4_6o7eo"]
+[ext_resource type="PackedScene" uid="uid://c0lrb1smu1a8w" path="res://Apps/1_Chat/ChatList/chat_list.tscn" id="4_6o7eo"]
 [ext_resource type="Texture2D" uid="uid://c3ljkvgrcrrdr" path="res://_Assets/App Icons 256x265/browser_app_icon.png" id="5_pb8ib"]
 [ext_resource type="Texture2D" uid="uid://b6p0abcgr5qtw" path="res://_Assets/App Icons 256x265/settings_app_icon.png" id="6_iyp04"]
 
