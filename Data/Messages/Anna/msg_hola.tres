@@ -5,4 +5,5 @@
 [resource]
 script = ExtResource("1_dwyha")
 text = "Hola, encontraste mi telefono?"
+reply_options = Array[String](["Sí, pero me lo voy a quedar", "¿Quién eres?"])
 metadata/_custom_type_script = "uid://dbte7kxlkuhtf"

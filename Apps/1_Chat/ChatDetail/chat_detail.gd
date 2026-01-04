@@ -11,6 +11,8 @@ const BUBBLE_OTHER = preload("uid://dcqg1uuswi4y8")
 @onready var message_scroll: ScrollContainer = %MessageScroll
 @onready var type_box: LineEdit = %TypeBox
 @onready var send_button: Button = %SendButton
+@onready var keyboard_input_container: HBoxContainer = %KeyboardInputContainer
+@onready var choice_input_container: HBoxContainer = %ChoiceInputContainer
 
 signal requested_go_back
 
@@ -48,18 +50,36 @@ func add_message_bubble(msg_data: MessageData) -> void:
 		
 	messages_container.add_child(bubble)
 	bubble.setup(msg_data.text)
+	
+	if not msg_data.reply_options.is_empty():
+		show_options(msg_data.reply_options)
 
 
 func trigger_npc_reply() -> void:
 	# TODO: Agregar animación
 	await get_tree().create_timer(2.0).timeout
 	
-	var reply_msg := MessageData.new()
-	reply_msg.text = "¡Qué interesante! Cuéntame más." # TODO: Cambiar respuesta genérica
-	reply_msg.sender = MessageData.Sender.OTHER
+	# TODO: Quitar respuesta temporal
+	const TEMP_TEXT := "¡Qué interesante! Cuéntame más."
+	var reply_msg := create_message(TEMP_TEXT, MessageData.Sender.OTHER)
 	add_message_bubble(reply_msg)
 	
 	scroll_to_bottom()
+
+
+func show_options(options: Array[String]) -> void:
+	keyboard_input_container.hide()
+	choice_input_container.show()
+	
+	for child in choice_input_container.get_children():
+		child.queue_free()
+		
+	for option_text in options:
+		var btn := Button.new()
+		btn.custom_minimum_size.x = 150 
+		btn.text = option_text
+		btn.pressed.connect(_on_option_selected.bind(option_text))
+		choice_input_container.add_child(btn)
 
 
 func scroll_to_bottom() -> void:
@@ -68,14 +88,19 @@ func scroll_to_bottom() -> void:
 	message_scroll.set_deferred(&"scroll_vertical", message_scroll.get_v_scroll_bar().max_value )
 
 
+func create_message(text: String, sender: MessageData.Sender) -> MessageData:
+	var msg := MessageData.new()
+	msg.text = text
+	msg.sender = sender
+	return msg
+
+
 func _on_send_pressed() -> void:
 	var text := type_box.text.strip_edges()
 	if text.is_empty():
 		return
 	
-	var new_msg := MessageData.new()
-	new_msg.text = text
-	new_msg.sender = MessageData.Sender.ME
+	var new_msg := create_message(text, MessageData.Sender.ME)
 	add_message_bubble(new_msg)
 	
 	type_box.text = ""
@@ -83,4 +108,17 @@ func _on_send_pressed() -> void:
 	scroll_to_bottom()
 	
 	# TODO: QUITAR SIMULACIÓN TEMPORAL
+	trigger_npc_reply()
+
+
+func _on_option_selected(text_selected: String) -> void:
+	var msg := create_message(text_selected, MessageData.Sender.ME)
+	
+	add_message_bubble(msg)
+	scroll_to_bottom()
+	
+	choice_input_container.hide()
+	keyboard_input_container.show()
+	
+	# TODO: Agregar detección de respuesta
 	trigger_npc_reply()
