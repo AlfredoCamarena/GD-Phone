@@ -1,7 +1,10 @@
+class_name ChatList
 extends Control
 
 const CONTACT_ROW_SCENE := preload("uid://f447clfv0fb1")
 const CHATS_PATH = "res://Data/Chats/"
+
+signal requested_open_chat(data: ChatData)
 
 @onready var chats_container: VBoxContainer = %ChatsContainer
 
@@ -30,5 +33,4 @@ func create_row(data: ChatData) -> void:
 
 
 func _on_chat_selected(data: ChatData) -> void:
-	print("Abrir conversación con: " + data.contact_name)
-	# AQUÍ (en el futuro) le diremos al Main que cambie de pantalla a la vista de chat
+	requested_open_chat.emit(data)

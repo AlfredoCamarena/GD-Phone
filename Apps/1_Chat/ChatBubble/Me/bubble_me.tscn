@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnmccr7wi7o5r"]
+
+[ext_resource type="PackedScene" uid="uid://cen32adkpntg4" path="res://Apps/1_Chat/ChatBubble/chat_bubble.tscn" id="1_thdyy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thdyy"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.38497895, 0.66225874, 0.59800816, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_left = 20
+
+[node name="BubbleMe" instance=ExtResource("1_thdyy")]
+offset_right = 178.0
+offset_bottom = 53.0
+size_flags_horizontal = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_thdyy")

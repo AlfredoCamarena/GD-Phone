@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="MessageData" load_steps=2 format=3 uid="uid://cxng1d07mao08"]
+
+[ext_resource type="Script" uid="uid://dbte7kxlkuhtf" path="res://_System/Resources/MessageData.gd" id="1_d710p"]
+
+[resource]
+script = ExtResource("1_d710p")
+text = "No sé jaja saludos solo quiero escribir mucho para ver si el espacio se ajusta correctamente. Cómo está la familia? Hace frío, edá?"
+metadata/_custom_type_script = "uid://dbte7kxlkuhtf"

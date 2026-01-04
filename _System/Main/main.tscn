@@ -68,7 +68,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Control" parent="SafeZone/MainLayout/AppContainer" instance=ExtResource("4_w0imb")]
+[node name="HomeApp" parent="SafeZone/MainLayout/AppContainer" instance=ExtResource("4_w0imb")]
 layout_mode = 2
 
 [node name="BottomBar" type="PanelContainer" parent="SafeZone/MainLayout"]

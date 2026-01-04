@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcqg1uuswi4y8"]
+
+[ext_resource type="PackedScene" uid="uid://cen32adkpntg4" path="res://Apps/1_Chat/ChatBubble/chat_bubble.tscn" id="1_yrf0o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yrf0o"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.62883025, 0.5156376, 0.57739353, 1)
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="BubbleOther" instance=ExtResource("1_yrf0o")]
+offset_right = 178.0
+offset_bottom = 53.0
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yrf0o")
