@@ -28,7 +28,7 @@ The project is currently in early development. The focus is on building the core
 
 - [x] Core OS UI & Notch Handling
 - [x] Chat App (Reading & Branching Choices)
-- [ ] Chat App (Images & Audio support)
+- [x] Chat App (Images & Audio support)
 - [ ] Photo Gallery App
 - [ ] Incoming Call System
 - [ ] Web Browser Simulation
@@ -43,7 +43,7 @@ The template uses a data-driven approach. You don't need to touch the scripts to
 
 1. **Create a Message:**
    - Right-click in FileSystem -> `New Resource` -> `MessageData`.
-   - Set the text, sender (ME/OTHER), and delay.
+   - Set the content (text/audio/image), sender (ME/OTHER), and delay.
    
 2. **Add Choices (Optional):**
    - In the `Reply Options` array of a message, create new `ReplyOption` resources.
