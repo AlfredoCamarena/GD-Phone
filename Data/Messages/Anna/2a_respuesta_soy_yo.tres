@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MessageData" load_steps=3 format=3 uid="uid://bkur7j11e6inq"]
+
+[ext_resource type="Script" uid="uid://bpse7if2ak65s" path="res://_System/Resources/ReplyOption.gd" id="1_ua2w3"]
+[ext_resource type="Script" uid="uid://dbte7kxlkuhtf" path="res://_System/Resources/MessageData.gd" id="2_jhaan"]
+
+[resource]
+script = ExtResource("2_jhaan")
+text = "¡Menos mal! Creí que perdí el movil"
+metadata/_custom_type_script = "uid://dbte7kxlkuhtf"

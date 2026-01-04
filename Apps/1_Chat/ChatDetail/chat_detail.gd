@@ -55,30 +55,30 @@ func add_message_bubble(msg_data: MessageData) -> void:
 		show_options(msg_data.reply_options)
 
 
-func trigger_npc_reply() -> void:
-	# TODO: Agregar animación
-	await get_tree().create_timer(2.0).timeout
-	
-	# TODO: Quitar respuesta temporal
-	const TEMP_TEXT := "¡Qué interesante! Cuéntame más."
-	var reply_msg := create_message(TEMP_TEXT, MessageData.Sender.OTHER)
-	add_message_bubble(reply_msg)
-	
+func trigger_npc_reply(message: MessageData) -> void:
+	# TODO: Agregar animación de escribiendo
+	await get_tree().create_timer(message.delay).timeout
+	add_message_bubble(message)
 	scroll_to_bottom()
+	
+	if message.next_message_auto:
+		trigger_npc_reply(message.next_message_auto)
+	elif not message.reply_options.is_empty():
+		show_options(message.reply_options)
 
 
-func show_options(options: Array[String]) -> void:
+func show_options(options: Array[ReplyOption]) -> void:
 	keyboard_input_container.hide()
 	choice_input_container.show()
 	
 	for child in choice_input_container.get_children():
 		child.queue_free()
 		
-	for option_text in options:
+	for option in options:
 		var btn := Button.new()
 		btn.custom_minimum_size.x = 150 
-		btn.text = option_text
-		btn.pressed.connect(_on_option_selected.bind(option_text))
+		btn.text = option.text
+		btn.pressed.connect(_on_option_selected.bind(option))
 		choice_input_container.add_child(btn)
 
 
@@ -107,12 +107,10 @@ func _on_send_pressed() -> void:
 	
 	scroll_to_bottom()
 	
-	# TODO: QUITAR SIMULACIÓN TEMPORAL
-	trigger_npc_reply()
 
 
-func _on_option_selected(text_selected: String) -> void:
-	var msg := create_message(text_selected, MessageData.Sender.ME)
+func _on_option_selected(option: ReplyOption) -> void:
+	var msg := create_message(option.text, MessageData.Sender.ME)
 	
 	add_message_bubble(msg)
 	scroll_to_bottom()
@@ -120,5 +118,7 @@ func _on_option_selected(text_selected: String) -> void:
 	choice_input_container.hide()
 	keyboard_input_container.show()
 	
-	# TODO: Agregar detección de respuesta
-	trigger_npc_reply()
+	if option.target_message:
+		trigger_npc_reply(option.target_message)
+	else:
+		print("Fin de la conversación (No hay target_message)")
