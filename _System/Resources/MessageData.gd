@@ -14,3 +14,6 @@ enum Sender { ME, OTHER }
 @export_group("Comportamiento")
 @export var delay: float = 1.5
 @export var is_read: bool = false
+
+@export_group("Interacción")
+@export var reply_options: Array[String] = []

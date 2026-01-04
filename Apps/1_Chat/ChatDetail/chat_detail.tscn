@@ -125,10 +125,11 @@ alignment = 2
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainLayout/InputArea"]
+[node name="KeyboardInputContainer" type="HBoxContainer" parent="MainLayout/InputArea"]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="TypeBox" type="LineEdit" parent="MainLayout/InputArea/HBoxContainer"]
+[node name="TypeBox" type="LineEdit" parent="MainLayout/InputArea/KeyboardInputContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -136,8 +137,15 @@ placeholder_text = "Escribe tu respuesta..."
 flat = true
 caret_blink = true
 
-[node name="SendButton" type="Button" parent="MainLayout/InputArea/HBoxContainer"]
+[node name="SendButton" type="Button" parent="MainLayout/InputArea/KeyboardInputContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 focus_mode = 0
 icon = ExtResource("4_w0bou")
+
+[node name="ChoiceInputContainer" type="HBoxContainer" parent="MainLayout/InputArea"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
