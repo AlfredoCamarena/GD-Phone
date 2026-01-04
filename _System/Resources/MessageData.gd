@@ -15,5 +15,8 @@ enum Sender { ME, OTHER }
 @export var delay: float = 1.5
 @export var is_read: bool = false
 
-@export_group("Interacción")
-@export var reply_options: Array[String] = []
+@export_group("Flujo Narrativo")
+# CASO A: El NPC sigue hablando solo (Mensaje 1 -> Mensaje 2)
+@export var next_message_auto: MessageData 
+# CASO B: El jugador debe elegir una respuesta (Ramificación)
+@export var reply_options: Array[ReplyOption] = []

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MessageData" load_steps=3 format=3 uid="uid://0q8rfrprbwt3"]
+
+[ext_resource type="Script" uid="uid://bpse7if2ak65s" path="res://_System/Resources/ReplyOption.gd" id="1_s0t24"]
+[ext_resource type="Script" uid="uid://dbte7kxlkuhtf" path="res://_System/Resources/MessageData.gd" id="2_src2g"]
+
+[resource]
+script = ExtResource("2_src2g")
+text = "Me llamo Anna. Ayudame"
+metadata/_custom_type_script = "uid://dbte7kxlkuhtf"
