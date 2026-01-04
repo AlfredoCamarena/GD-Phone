@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="ChatData" load_steps=6 format=3 uid="uid://clov4e5f75fxj"]
+[gd_resource type="Resource" script_class="ChatData" load_steps=8 format=3 uid="uid://clov4e5f75fxj"]
 
 [ext_resource type="Script" uid="uid://dbte7kxlkuhtf" path="res://_System/Resources/MessageData.gd" id="1_4bhi4"]
 [ext_resource type="Resource" uid="uid://k3hrrvjf08d4" path="res://Data/Messages/Anna/msg_hola.tres" id="2_ne0hs"]
 [ext_resource type="Script" uid="uid://r6alea8oi7u3" path="res://_System/Resources/ChatData.gd" id="2_pejcp"]
 [ext_resource type="Resource" uid="uid://06ar1do2hycm" path="res://Data/Messages/Anna/msg_respuesta.tres" id="3_0na06"]
 [ext_resource type="Texture2D" uid="uid://fi042hb8xr13" path="res://_Assets/Avatars 256x256/default_avatar.png" id="4_0na06"]
+[ext_resource type="Resource" uid="uid://cxng1d07mao08" path="res://Data/Messages/Anna/msg_long.tres" id="4_txcsh"]
+[ext_resource type="Resource" uid="uid://btvyp3ko1477v" path="res://Data/Messages/Anna/msg_long2.tres" id="5_0ym50"]
 
 [resource]
 script = ExtResource("2_pejcp")
 contact_name = "Anna"
-conversation = Array[ExtResource("1_4bhi4")]([ExtResource("2_ne0hs"), ExtResource("3_0na06")])
+conversation = Array[ExtResource("1_4bhi4")]([ExtResource("2_ne0hs"), ExtResource("3_0na06"), ExtResource("4_txcsh"), ExtResource("5_0ym50")])
 metadata/_custom_type_script = "uid://r6alea8oi7u3"

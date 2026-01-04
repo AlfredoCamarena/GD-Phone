@@ -22,5 +22,6 @@ func setup(data: ChatData) -> void:
 	else:
 		preview_label.text = ""
 
+
 func _pressed() -> void:
 	chat_selected.emit(chat_data)

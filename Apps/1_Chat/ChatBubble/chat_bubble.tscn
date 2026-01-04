@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cen32adkpntg4"]
+
+[ext_resource type="Script" uid="uid://dxa71id6av5w" path="res://Apps/1_Chat/ChatBubble/chat_bubble.gd" id="1_kw4iq"]
+
+[node name="ChatBubble" type="PanelContainer"]
+offset_right = 148.0
+offset_bottom = 23.0
+script = ExtResource("1_kw4iq")
+
+[node name="MessageLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Mensaje de prueba"
