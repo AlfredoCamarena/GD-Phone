@@ -1,12 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cabx0s08jbd7k"]
+[gd_scene load_steps=4 format=3 uid="uid://cabx0s08jbd7k"]
 
 [ext_resource type="Script" uid="uid://drcunfsic6kfr" path="res://Apps/2_Gallery/gallery_app.gd" id="1_1wjtb"]
-[ext_resource type="Texture2D" uid="uid://1o7wvfa15rv8" path="res://Data/Images/_default_wallpaper.png" id="2_8wvl7"]
 [ext_resource type="PackedScene" uid="uid://c5t7edwwhts5y" path="res://Apps/2_Gallery/GalleryList/gallery_list.tscn" id="3_c40nt"]
-[ext_resource type="Texture2D" uid="uid://cvx60ej10urxv" path="res://_Assets/Avatars 256x256/contacts/contact1.png" id="4_0x47y"]
 [ext_resource type="PackedScene" uid="uid://bydnmqg2wvxu6" path="res://Apps/2_Gallery/PhotoViewer/photo_viewer.tscn" id="4_3n0y3"]
-[ext_resource type="Texture2D" uid="uid://bsulurq2g3kvm" path="res://_Assets/Avatars 256x256/contacts/contact4.png" id="5_lmqjx"]
-[ext_resource type="Texture2D" uid="uid://d04l38muxaspr" path="res://_Assets/Gallery 128x128/file_corrupt.png" id="6_k4l0r"]
 
 [node name="GalleryApp" type="Control"]
 layout_mode = 3
@@ -20,7 +16,6 @@ script = ExtResource("1_1wjtb")
 [node name="GalleryList" parent="." instance=ExtResource("3_c40nt")]
 unique_name_in_owner = true
 layout_mode = 1
-initial_photos = Array[Texture2D]([ExtResource("2_8wvl7"), ExtResource("4_0x47y"), ExtResource("5_lmqjx"), ExtResource("6_k4l0r")])
 
 [node name="PhotoViewer" parent="." instance=ExtResource("4_3n0y3")]
 unique_name_in_owner = true
