@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bco2f5tc6jwnu"]
+
+[ext_resource type="Script" uid="uid://ctpqlqb78d42u" path="res://Apps/2_Gallery/PhotoThumbnail/photo_thumbnail.gd" id="1_wyxyp"]
+
+[node name="PhotoThumbnail" type="TextureButton"]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 40.0
+offset_bottom = 40.0
+ignore_texture_size = true
+stretch_mode = 6
+script = ExtResource("1_wyxyp")

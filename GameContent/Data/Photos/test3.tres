@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PhotoData" load_steps=3 format=3 uid="uid://ckqjw55clsorj"]
+
+[ext_resource type="Texture2D" uid="uid://ci66iqa3osxfo" path="res://GameContent/Assets/Images/Profiles/contact2.png" id="1_exvkr"]
+[ext_resource type="Script" uid="uid://b3yv8vn8ydvqr" path="res://_System/Resources/PhotoData.gd" id="2_hyxgc"]
+
+[resource]
+script = ExtResource("2_hyxgc")
+filename = "IMG_003"
+image = ExtResource("1_exvkr")
+date = "02-01-2026"
+location = ""
+metadata/_custom_type_script = "uid://b3yv8vn8ydvqr"
