@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://bydnmqg2wvxu6"]
+
+[ext_resource type="Texture2D" uid="uid://ds7ic48ku3bl2" path="res://_Assets/NavBar128x128/nav_back.png" id="1_4nosk"]
+[ext_resource type="Script" uid="uid://dyo4phhdrrtd4" path="res://Apps/2_Gallery/PhotoViewer/photo_viewer.gd" id="1_pedar"]
+
+[node name="PhotoViewer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pedar")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeaderContainer" type="HBoxContainer" parent="MainContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="MainContainer/HeaderContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+icon = ExtResource("1_4nosk")
+expand_icon = true
+
+[node name="FullPhoto" type="TextureRect" parent="MainContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FooterContainer" type="HBoxContainer" parent="MainContainer"]
+custom_minimum_size = Vector2(0, 96)
+layout_mode = 2
