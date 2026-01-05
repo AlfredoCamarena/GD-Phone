@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsulurq2g3kvm"
-path="res://.godot/imported/contact4.png-ad20ae3a2e03eb8bca384689af682480.ctex"
+uid="uid://cvx60ej10urxv"
+path="res://.godot/imported/contact1.png-25252a7f6001d3b4604ad077316cd6f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://_Assets/Avatars 256x256/contacts/contact4.png"
-dest_files=["res://.godot/imported/contact4.png-ad20ae3a2e03eb8bca384689af682480.ctex"]
+source_file="res://GameContent/Assets/Images/Profiles/contact1.png"
+dest_files=["res://.godot/imported/contact1.png-25252a7f6001d3b4604ad077316cd6f1.ctex"]
 
 [params]
 

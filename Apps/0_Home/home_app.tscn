@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxh4bc7d5x1sv"]
+[gd_scene load_steps=9 format=3 uid="uid://dxh4bc7d5x1sv"]
 
 [ext_resource type="PackedScene" uid="uid://cudkmk2hvfj57" path="res://Apps/0_Home/AppIcon/app_icon.tscn" id="1_23q5x"]
 [ext_resource type="Texture2D" uid="uid://mxrcjhfkf1o7" path="res://_Assets/App Icons 256x265/message_app_icon.png" id="2_4h0ds"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://mfr371hjogct" path="res://Apps/1_Chat/chat_app.tscn" id="4_6o7eo"]
 [ext_resource type="Texture2D" uid="uid://c3ljkvgrcrrdr" path="res://_Assets/App Icons 256x265/browser_app_icon.png" id="5_pb8ib"]
 [ext_resource type="Texture2D" uid="uid://b6p0abcgr5qtw" path="res://_Assets/App Icons 256x265/settings_app_icon.png" id="6_iyp04"]
+[ext_resource type="PackedScene" uid="uid://cabx0s08jbd7k" path="res://Apps/2_Gallery/gallery_app.tscn" id="7_pb8ib"]
 
 [node name="HomeApp" type="Control"]
 layout_mode = 3
@@ -83,6 +84,7 @@ layout_mode = 2
 disabled = false
 text = "Gallery"
 icon = ExtResource("4_4j4ky")
+app_scene = ExtResource("7_pb8ib")
 
 [node name="BrowserIcon" parent="VBoxContainer/Row1" instance=ExtResource("1_23q5x")]
 layout_mode = 2
