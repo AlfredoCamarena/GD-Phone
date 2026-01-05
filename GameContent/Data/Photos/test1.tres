@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="PhotoData" load_steps=3 format=3 uid="uid://vfatcsi11l20"]
 
 [ext_resource type="Script" uid="uid://b3yv8vn8ydvqr" path="res://_System/Resources/PhotoData.gd" id="1_46xm1"]
-[ext_resource type="Texture2D" uid="uid://1o7wvfa15rv8" path="res://Data/Images/_default_wallpaper.png" id="1_fk2mv"]
+[ext_resource type="Texture2D" uid="uid://1o7wvfa15rv8" path="res://GameContent/Assets/Images/_default_wallpaper.png" id="1_fk2mv"]
 
 [resource]
 script = ExtResource("1_46xm1")
