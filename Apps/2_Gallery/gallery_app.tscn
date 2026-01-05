@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://cabx0s08jbd7k"]
+
+[ext_resource type="Script" uid="uid://drcunfsic6kfr" path="res://Apps/2_Gallery/gallery_app.gd" id="1_1wjtb"]
+[ext_resource type="Texture2D" uid="uid://1o7wvfa15rv8" path="res://Data/Images/_default_wallpaper.png" id="2_8wvl7"]
+
+[node name="GalleryApp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1wjtb")
+initial_photos = Array[Texture2D]([ExtResource("2_8wvl7"), ExtResource("2_8wvl7"), ExtResource("2_8wvl7"), ExtResource("2_8wvl7")])
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1643509, 0.22947311, 0.300465, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Galeria"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PhotoGrid" type="GridContainer" parent="VBoxContainer/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
