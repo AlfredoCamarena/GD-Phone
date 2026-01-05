@@ -2,9 +2,10 @@ class_name ChatList
 extends Control
 
 const CONTACT_ROW_SCENE := preload("uid://f447clfv0fb1")
-const CHATS_PATH = "res://Data/Chats/"
 
 signal requested_open_chat(data: ChatData)
+
+@export_dir var chats_path := "res://GameContent/Data/Chats"
 
 @onready var chats_container: VBoxContainer = %ChatsContainer
 
@@ -12,14 +13,14 @@ func _ready() -> void:
 	for child in chats_container.get_children():
 		child.queue_free()
 	
-	var dir := DirAccess.open(CHATS_PATH)
+	var dir := DirAccess.open(chats_path)
 	dir.list_dir_begin()
 	
 	var file_name := dir.get_next()
 	while file_name != "":
 		if file_name.ends_with(".tres") or file_name.ends_with(".remap"):
 			var clean_name := file_name.replace(".remap", "")
-			var resource := load(CHATS_PATH + clean_name) as ChatData
+			var resource := load(chats_path + "/" + clean_name) as ChatData
 			if resource:
 				create_row(resource)
 		file_name = dir.get_next()

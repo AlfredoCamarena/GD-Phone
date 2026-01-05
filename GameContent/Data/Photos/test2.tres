@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="PhotoData" load_steps=3 format=3 uid="uid://dioj5trsste0y"]
 
-[ext_resource type="Texture2D" uid="uid://cvx60ej10urxv" path="res://_Assets/Avatars 256x256/contacts/contact1.png" id="1_ukx5o"]
+[ext_resource type="Texture2D" uid="uid://cvx60ej10urxv" path="res://GameContent/Assets/Images/Profiles/contact1.png" id="1_ukx5o"]
 [ext_resource type="Script" uid="uid://b3yv8vn8ydvqr" path="res://_System/Resources/PhotoData.gd" id="2_vnbxk"]
 
 [resource]
