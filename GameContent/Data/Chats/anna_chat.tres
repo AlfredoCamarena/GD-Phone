@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dbte7kxlkuhtf" path="res://_System/Resources/MessageData.gd" id="1_4bhi4"]
 [ext_resource type="Resource" uid="uid://w3jk8n06ho3m" path="res://GameContent/Data/Messages/Anna/1_hola.tres" id="2_lkk1x"]
 [ext_resource type="Script" uid="uid://r6alea8oi7u3" path="res://_System/Resources/ChatData.gd" id="2_pejcp"]
-[ext_resource type="Texture2D" uid="uid://fi042hb8xr13" path="res://_Assets/Avatars 256x256/default_avatar.png" id="4_0na06"]
+[ext_resource type="Texture2D" uid="uid://fi042hb8xr13" path="res://_Assets/Image/Avatars 256x256/default_avatar.png" id="4_0na06"]
 
 [resource]
 script = ExtResource("2_pejcp")

@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cl406pxpjjv11"]
 
 [ext_resource type="Script" uid="uid://b67bnywm1tplc" path="res://_System/StatusBar/status_bar.gd" id="1_spint"]
-[ext_resource type="Texture2D" uid="uid://bniffdrglfqkf" path="res://_Assets/StatusBar64x64/battery.png" id="2_k28ht"]
-[ext_resource type="Texture2D" uid="uid://xtp18d4t7mcp" path="res://_Assets/StatusBar64x64/signal_cellular.png" id="2_xivyt"]
-[ext_resource type="Texture2D" uid="uid://cru06mcd5v8p3" path="res://_Assets/StatusBar64x64/wifi.png" id="3_up37j"]
+[ext_resource type="Texture2D" uid="uid://bniffdrglfqkf" path="res://_Assets/Image/StatusBar64x64/battery.png" id="2_k28ht"]
+[ext_resource type="Texture2D" uid="uid://xtp18d4t7mcp" path="res://_Assets/Image/StatusBar64x64/signal_cellular.png" id="2_xivyt"]
+[ext_resource type="Texture2D" uid="uid://cru06mcd5v8p3" path="res://_Assets/Image/StatusBar64x64/wifi.png" id="3_up37j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xivyt"]
 bg_color = Color(0, 0, 0, 1)
