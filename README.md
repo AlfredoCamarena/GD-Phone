@@ -29,7 +29,7 @@ The project is currently in early development. The focus is on building the core
 - [x] Chat App (Reading & Branching Choices)
 - [x] Chat App (Images & Audio support)
 - [x] Photo Gallery App
-- [ ] Incoming Call System
+- [x] Incoming Call System
 - [ ] Web Browser Simulation
 - [ ] Notification System
 
