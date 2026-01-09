@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bydnmqg2wvxu6"]
 
-[ext_resource type="Texture2D" uid="uid://ds7ic48ku3bl2" path="res://_Assets/NavBar128x128/nav_back.png" id="1_4nosk"]
+[ext_resource type="Texture2D" uid="uid://ds7ic48ku3bl2" path="res://_Assets/Image/NavBar128x128/nav_back.png" id="1_4nosk"]
 [ext_resource type="Script" uid="uid://dyo4phhdrrtd4" path="res://Apps/2_Gallery/PhotoViewer/photo_viewer.gd" id="1_pedar"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pedar"]

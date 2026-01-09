@@ -2,6 +2,7 @@ extends Control
 
 @onready var app_container: Control = %AppContainer
 @onready var home_button: Button = %HomeButton
+@onready var call_screen: CallScreen = %CallScreen
 
 @export var home_scene: PackedScene
 
