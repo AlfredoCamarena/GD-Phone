@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cen32adkpntg4"]
 
 [ext_resource type="Script" uid="uid://dxa71id6av5w" path="res://Apps/1_Chat/ChatBubble/chat_bubble.gd" id="1_kw4iq"]
-[ext_resource type="Texture2D" uid="uid://cgvlgswhkb262" path="res://_Assets/Gallery 128x128/media_play.png" id="2_mxkyg"]
+[ext_resource type="Texture2D" uid="uid://cgvlgswhkb262" path="res://_Assets/Image/Gallery 128x128/media_play.png" id="2_mxkyg"]
 
 [node name="ChatBubble" type="PanelContainer"]
 offset_right = 148.0
