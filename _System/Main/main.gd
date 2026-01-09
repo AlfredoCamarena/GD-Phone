@@ -2,6 +2,7 @@ extends Control
 
 @onready var app_container: Control = %AppContainer
 @onready var home_button: Button = %HomeButton
+@onready var call_screen: CallScreen = %CallScreen
 
 @export var home_scene: PackedScene
 
@@ -13,6 +14,10 @@ func _connect_signals() -> void:
 
 func _ready() -> void:
 	_connect_signals()
+	
+	# TODO: Quitar llamada de prueba
+	await get_tree().create_timer(3.0).timeout
+	call_screen.start_call()
 
 
 func _open_app(scene: PackedScene) -> void:

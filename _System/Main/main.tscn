@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqaw32aqudvwb"]
+[gd_scene load_steps=11 format=3 uid="uid://cqaw32aqudvwb"]
 
 [ext_resource type="Script" uid="uid://cnl5785aty0nt" path="res://_System/Main/main.gd" id="1_dft58"]
 [ext_resource type="Texture2D" uid="uid://1o7wvfa15rv8" path="res://GameContent/Assets/Images/_default_wallpaper.png" id="1_jpee4"]
 [ext_resource type="Script" uid="uid://byx3j6wqc4skd" path="res://_System/SafeZoneContainer/safe_zone_container.gd" id="2_dft58"]
+[ext_resource type="PackedScene" uid="uid://bb2mvtm3s6mkf" path="res://_System/Overlays/CallScreen/call_screen.tscn" id="3_5vu0n"]
 [ext_resource type="PackedScene" uid="uid://cl406pxpjjv11" path="res://_System/StatusBar/status_bar.tscn" id="3_dnpl7"]
 [ext_resource type="PackedScene" uid="uid://dxh4bc7d5x1sv" path="res://Apps/0_Home/home_app.tscn" id="4_w0imb"]
-[ext_resource type="Texture2D" uid="uid://ds7ic48ku3bl2" path="res://_Assets/NavBar128x128/nav_back.png" id="6_wsokd"]
-[ext_resource type="Texture2D" uid="uid://bsq86moe1s3yn" path="res://_Assets/NavBar128x128/nav_home.png" id="7_5vu0n"]
-[ext_resource type="Texture2D" uid="uid://c1dsjllm4uigt" path="res://_Assets/NavBar128x128/nav_recent.png" id="8_rhpyp"]
+[ext_resource type="Texture2D" uid="uid://ds7ic48ku3bl2" path="res://_Assets/Image/NavBar128x128/nav_back.png" id="6_wsokd"]
+[ext_resource type="Texture2D" uid="uid://bsq86moe1s3yn" path="res://_Assets/Image/NavBar128x128/nav_home.png" id="7_5vu0n"]
+[ext_resource type="Texture2D" uid="uid://c1dsjllm4uigt" path="res://_Assets/Image/NavBar128x128/nav_recent.png" id="8_rhpyp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
 bg_color = Color(0, 0, 0, 1)
@@ -28,6 +29,10 @@ home_scene = ExtResource("4_w0imb")
 visible = false
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="CallScreen" parent="CanvasLayer" instance=ExtResource("3_5vu0n")]
+unique_name_in_owner = true
+visible = false
 
 [node name="UnsafeZoneCover" type="ColorRect" parent="."]
 layout_mode = 1

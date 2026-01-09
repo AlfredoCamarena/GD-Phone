@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://f447clfv0fb1"]
 
 [ext_resource type="Script" uid="uid://cixao8ua2cb8r" path="res://Apps/1_Chat/ChatRow/chat_row.gd" id="1_xals4"]
-[ext_resource type="Texture2D" uid="uid://fi042hb8xr13" path="res://_Assets/Avatars 256x256/default_avatar.png" id="1_yf8o3"]
+[ext_resource type="Texture2D" uid="uid://fi042hb8xr13" path="res://_Assets/Image/Avatars 256x256/default_avatar.png" id="1_yf8o3"]
 
 [node name="ChatRow" type="Button"]
 custom_minimum_size = Vector2(0, 100)
