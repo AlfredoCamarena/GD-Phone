@@ -53,6 +53,9 @@ func add_message_bubble(msg_data: MessageData) -> void:
 	
 	if not msg_data.reply_options.is_empty():
 		show_options(msg_data.reply_options)
+	
+	if msg_data.on_read_event:
+		EventManager.execute(msg_data.on_read_event)
 
 
 func trigger_npc_reply(message: MessageData) -> void:
