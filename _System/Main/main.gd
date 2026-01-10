@@ -29,5 +29,5 @@ func _clear_app_container() -> void:
 		child.queue_free()
 
 
-func _on_event_call(contact_name: String, photo: Texture2D, voice_audio: AudioStream) -> void:
-	call_screen.start_call(voice_audio, contact_name, photo)
+func _on_event_call(contact: ContactData, voice_audio: AudioStream) -> void:
+	call_screen.start_call(contact, voice_audio)
