@@ -15,6 +15,9 @@ func execute(event: StoryEvent) -> void:
 			else:
 				push_error("The Incoming Call event must have a target resource of type ContactData")
 		StoryEvent.Type.UNLOCK_PHOTO:
-			pass
+			if event.target_resource is PhotoData:
+				trigger_photo_unlock.emit(event.target_resource)
+			else:
+				push_error("The Unlock Photo event must have a target resource of type PhotoData")
 		StoryEvent.Type.NOTIFICATION:
 			pass
