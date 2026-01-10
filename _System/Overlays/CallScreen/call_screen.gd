@@ -16,11 +16,11 @@ signal call_ended
 var is_active_call := false
 var call_duration := 0.0
 
-func start_call(voice_audio: AudioStream, contact_name: String = "Unkown", photo: Texture2D = null) -> void:
+func start_call(contact: ContactData, voice_audio: AudioStream) -> void:
 	voice_player.stream = voice_audio
-	name_label.text = contact_name
-	if photo:
-		photo_rect.texture = photo
+	name_label.text = contact.name
+	if contact.avatar:
+		photo_rect.texture = contact.avatar
 	
 	_reset_ui()
 	

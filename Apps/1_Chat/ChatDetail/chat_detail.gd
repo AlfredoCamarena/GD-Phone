@@ -27,9 +27,9 @@ func _ready() -> void:
 
 
 func setup(chat_data: ChatData) -> void:
-	name_label.text = chat_data.contact_name
-	if chat_data.profile_pic:
-		avatar.texture = chat_data.profile_pic
+	name_label.text = chat_data.contact.name
+	if chat_data.contact.avatar:
+		avatar.texture = chat_data.contact.avatar
 	
 	for child in messages_container.get_children():
 		child.queue_free()
@@ -53,6 +53,9 @@ func add_message_bubble(msg_data: MessageData) -> void:
 	
 	if not msg_data.reply_options.is_empty():
 		show_options(msg_data.reply_options)
+	
+	if msg_data.on_read_event:
+		EventManager.execute(msg_data.on_read_event)
 
 
 func trigger_npc_reply(message: MessageData) -> void:
