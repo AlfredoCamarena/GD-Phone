@@ -11,6 +11,7 @@ func _connect_signals() -> void:
 		_open_app(home_scene))
 	SignalBus.open_app_requested.connect(_open_app)
 	EventManager.trigger_call.connect(_on_event_call)
+	EventManager.trigger_photo_unlock.connect(_on_event_photo_unlocked)
 
 
 func _ready() -> void:
@@ -31,3 +32,7 @@ func _clear_app_container() -> void:
 
 func _on_event_call(contact: ContactData, voice_audio: AudioStream) -> void:
 	call_screen.start_call(contact, voice_audio)
+
+
+func _on_event_photo_unlocked(photo_data: PhotoData) -> void:
+	PlayerData.add_photo(photo_data)

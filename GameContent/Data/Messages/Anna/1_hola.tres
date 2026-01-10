@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://1o7wvfa15rv8" path="res://GameContent/Assets/Images/_default_wallpaper.png" id="2_2nchv"]
 [ext_resource type="Resource" uid="uid://bkur7j11e6inq" path="res://GameContent/Data/Messages/Anna/2a_respuesta_soy_yo.tres" id="2_j8alq"]
 [ext_resource type="Script" uid="uid://dbte7kxlkuhtf" path="res://_System/Resources/MessageData.gd" id="2_jwdeb"]
-[ext_resource type="Resource" uid="uid://bl33yeocr7lh5" path="res://GameContent/Data/Events/test_call.tres" id="3_evpg7"]
+[ext_resource type="Resource" uid="uid://gy72o7xq1lnu" path="res://GameContent/Data/Events/test_unlock_photo.tres" id="3_evpg7"]
 [ext_resource type="Resource" uid="uid://0q8rfrprbwt3" path="res://GameContent/Data/Messages/Anna/2b_respuesta_quien_eres.tres" id="3_j8alq"]
 
 [sub_resource type="Resource" id="Resource_36sm3"]
