@@ -12,9 +12,9 @@ var chat_data: ChatData
 func setup(data: ChatData) -> void:
 	chat_data = data
 
-	name_label.text = data.contact_name
-	if data.profile_pic:
-		avatar.texture = data.profile_pic
+	name_label.text = data.contact.name
+	if data.contact.avatar:
+		avatar.texture = data.contact.avatar
 	
 	if data.conversation.size() > 0:
 		var last_msg := data.conversation[-1]
