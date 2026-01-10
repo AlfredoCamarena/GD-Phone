@@ -10,6 +10,7 @@ func _connect_signals() -> void:
 	home_button.pressed.connect(func() -> void:
 		_open_app(home_scene))
 	SignalBus.open_app_requested.connect(_open_app)
+	EventManager.trigger_call.connect(_on_event_call)
 
 
 func _ready() -> void:
@@ -26,3 +27,7 @@ func _open_app(scene: PackedScene) -> void:
 func _clear_app_container() -> void:
 	for child in app_container.get_children():
 		child.queue_free()
+
+
+func _on_event_call(contact_name: String, photo: Texture2D, voice_audio: AudioStream) -> void:
+	call_screen.start_call(voice_audio, contact_name, photo)
