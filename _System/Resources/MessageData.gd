@@ -20,3 +20,6 @@ enum Sender { ME, OTHER }
 @export var next_message_auto: MessageData 
 # CASO B: El jugador debe elegir una respuesta (Ramificación)
 @export var reply_options: Array[ReplyOption] = []
+
+@export_group("Eventos de Historia")
+@export var on_read_event: StoryEvent
