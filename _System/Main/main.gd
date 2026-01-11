@@ -3,6 +3,7 @@ extends Control
 @onready var app_container: Control = %AppContainer
 @onready var home_button: Button = %HomeButton
 @onready var call_screen: CallScreen = %CallScreen
+@onready var notification_banner: NotificationBanner = %NotificationBanner
 
 @export var home_scene: PackedScene
 
@@ -12,6 +13,7 @@ func _connect_signals() -> void:
 	SignalBus.open_app_requested.connect(_open_app)
 	EventManager.trigger_call.connect(_on_event_call)
 	EventManager.trigger_photo_unlock.connect(_on_event_photo_unlocked)
+	EventManager.trigger_notification.connect(_on_event_notification)
 
 
 func _ready() -> void:
@@ -36,3 +38,7 @@ func _on_event_call(contact: ContactData, voice_audio: AudioStream) -> void:
 
 func _on_event_photo_unlocked(photo_data: PhotoData) -> void:
 	PlayerData.add_photo(photo_data)
+
+
+func _on_event_notification(notification_data: NotificationData) -> void:
+	notification_banner.show_notification(notification_data)
