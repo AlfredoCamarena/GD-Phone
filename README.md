@@ -23,15 +23,15 @@ The project is currently in early development. The focus is on building the core
 - **Branching Narrative:** Support for player choices that dynamically alter the conversation flow.
 - **Linked List Logic:** Messages can trigger subsequent messages automatically or wait for player input.
 
-## 🗺️ Roadmap
+## 🗺️ Roadmap (Phase 1)
 
 - [x] Core OS UI & Notch Handling
 - [x] Chat App (Reading & Branching Choices)
 - [x] Chat App (Images & Audio support)
 - [x] Photo Gallery App
 - [x] Incoming Call System
+- [x] Notification System
 - [ ] Web Browser Simulation
-- [ ] Notification System
 
 ## 🚀 Getting Started
 
