@@ -2,7 +2,7 @@ extends Node
 
 signal trigger_call(contact: ContactData, voice: AudioStream)
 signal trigger_photo_unlock(photo_data: PhotoData)
-signal trigger_notification(title: String, body: String)
+signal trigger_notification(notification_data: NotificationData)
 
 func execute(event: StoryEvent) -> void:
 	if event.delay > 0:
@@ -20,4 +20,7 @@ func execute(event: StoryEvent) -> void:
 			else:
 				push_error("The Unlock Photo event must have a target resource of type PhotoData")
 		StoryEvent.Type.NOTIFICATION:
-			pass
+			if event.target_resource is NotificationData:
+				trigger_notification.emit(event.target_resource)
+			else:
+				push_warning("The Notification event must have a target resource of type NotificationData")
