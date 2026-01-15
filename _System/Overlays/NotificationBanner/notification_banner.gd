@@ -21,6 +21,6 @@ func show_notification(data: NotificationData) -> void:
 		audio_stream_player.play()
 	
 	var tween := create_tween()
-	tween.tween_property(self, "position:y", 60.0, 0.5).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "position:y", 0, 0.5).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	tween.tween_interval(data.duration)
-	tween.tween_property(self, "position:y", -150.0, 0.5).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+	tween.tween_property(self, "position:y", -160.0, 0.5).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
