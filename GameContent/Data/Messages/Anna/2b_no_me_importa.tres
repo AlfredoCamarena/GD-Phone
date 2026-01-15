@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MessageData" load_steps=4 format=3 uid="uid://0q8rfrprbwt3"]
+
+[ext_resource type="Resource" uid="uid://bl33yeocr7lh5" path="res://GameContent/Data/Events/IncomingCall/test_call.tres" id="1_nx55m"]
+[ext_resource type="Script" uid="uid://bpse7if2ak65s" path="res://_System/Resources/ReplyOption.gd" id="2_crnir"]
+[ext_resource type="Script" uid="uid://dbte7kxlkuhtf" path="res://_System/Resources/MessageData.gd" id="3_37vfw"]
+
+[resource]
+script = ExtResource("3_37vfw")
+text = "Te woa marcar"
+on_read_event = ExtResource("1_nx55m")
+metadata/_custom_type_script = "uid://dbte7kxlkuhtf"
