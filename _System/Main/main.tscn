@@ -24,15 +24,6 @@ grow_vertical = 2
 script = ExtResource("1_dft58")
 home_scene = ExtResource("4_w0imb")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="CallScreen" parent="CanvasLayer" instance=ExtResource("3_5vu0n")]
-unique_name_in_owner = true
-visible = false
-
-[node name="NotificationBanner" parent="CanvasLayer" instance=ExtResource("4_rhpyp")]
-unique_name_in_owner = true
-
 [node name="UnsafeZoneCover" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -64,12 +55,40 @@ theme_override_constants/separation = 0
 [node name="StatusBar" parent="SafeZone/MainLayout" instance=ExtResource("3_dnpl7")]
 layout_mode = 2
 
-[node name="AppContainer" type="Control" parent="SafeZone/MainLayout"]
-unique_name_in_owner = true
+[node name="Game" type="Control" parent="SafeZone/MainLayout"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HomeApp" parent="SafeZone/MainLayout/AppContainer" instance=ExtResource("4_w0imb")]
+[node name="AppContainer" type="Control" parent="SafeZone/MainLayout/Game"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="HomeApp" parent="SafeZone/MainLayout/Game/AppContainer" instance=ExtResource("4_w0imb")]
+layout_mode = 1
+
+[node name="Overlays" type="Control" parent="SafeZone/MainLayout/Game"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CallScreen" parent="SafeZone/MainLayout/Game/Overlays" instance=ExtResource("3_5vu0n")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="NotificationBanner" parent="SafeZone/MainLayout/Game/Overlays" instance=ExtResource("4_rhpyp")]
+unique_name_in_owner = true
 layout_mode = 1
 
 [node name="BottomBar" type="PanelContainer" parent="SafeZone/MainLayout"]
