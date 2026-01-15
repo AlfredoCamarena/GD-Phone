@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="MessageData" load_steps=7 format=3 uid="uid://bkur7j11e6inq"]
+
+[ext_resource type="Texture2D" uid="uid://1o7wvfa15rv8" path="res://GameContent/Assets/Images/_default_wallpaper.png" id="1_eswhr"]
+[ext_resource type="Resource" uid="uid://gy72o7xq1lnu" path="res://GameContent/Data/Events/UnlockPhoto/test_unlock_photo.tres" id="2_eswhr"]
+[ext_resource type="Script" uid="uid://bpse7if2ak65s" path="res://_System/Resources/ReplyOption.gd" id="3_kxbo1"]
+[ext_resource type="Resource" uid="uid://0q8rfrprbwt3" path="res://GameContent/Data/Messages/Anna/2b_no_me_importa.tres" id="4_26iwo"]
+[ext_resource type="Script" uid="uid://dbte7kxlkuhtf" path="res://_System/Resources/MessageData.gd" id="5_h0gbu"]
+
+[sub_resource type="Resource" id="Resource_ui5bq"]
+script = ExtResource("3_kxbo1")
+text = "No me importa"
+target_message = ExtResource("4_26iwo")
+metadata/_custom_type_script = "uid://bpse7if2ak65s"
+
+[resource]
+script = ExtResource("5_h0gbu")
+text = "Mira esta foto!"
+image = ExtResource("1_eswhr")
+reply_options = Array[ExtResource("3_kxbo1")]([SubResource("Resource_ui5bq")])
+on_read_event = ExtResource("2_eswhr")
+metadata/_custom_type_script = "uid://dbte7kxlkuhtf"
