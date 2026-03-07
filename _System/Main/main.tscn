@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cqaw32aqudvwb"]
+[gd_scene format=3 uid="uid://cqaw32aqudvwb"]
 
 [ext_resource type="Script" uid="uid://cnl5785aty0nt" path="res://_System/Main/main.gd" id="1_dft58"]
 [ext_resource type="Texture2D" uid="uid://1o7wvfa15rv8" path="res://GameContent/Assets/Images/_default_wallpaper.png" id="1_jpee4"]
@@ -14,7 +14,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="Main" type="Control"]
+[node name="Main" type="Control" unique_id=1770073274]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,7 +24,7 @@ grow_vertical = 2
 script = ExtResource("1_dft58")
 home_scene = ExtResource("4_w0imb")
 
-[node name="UnsafeZoneCover" type="ColorRect" parent="."]
+[node name="UnsafeZoneCover" type="ColorRect" parent="." unique_id=757459562]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,7 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="SafeZone" type="MarginContainer" parent="."]
+[node name="SafeZone" type="MarginContainer" parent="." unique_id=1117336225]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,23 +43,23 @@ grow_vertical = 2
 script = ExtResource("2_dft58")
 metadata/_custom_type_script = "uid://byx3j6wqc4skd"
 
-[node name="Wallpaper" type="TextureRect" parent="SafeZone"]
+[node name="Wallpaper" type="TextureRect" parent="SafeZone" unique_id=1746537983]
 self_modulate = Color(0.45840502, 0.45840508, 0.45840502, 1)
 layout_mode = 2
 texture = ExtResource("1_jpee4")
 
-[node name="MainLayout" type="VBoxContainer" parent="SafeZone"]
+[node name="MainLayout" type="VBoxContainer" parent="SafeZone" unique_id=1751012823]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="StatusBar" parent="SafeZone/MainLayout" instance=ExtResource("3_dnpl7")]
+[node name="StatusBar" parent="SafeZone/MainLayout" unique_id=16003630 instance=ExtResource("3_dnpl7")]
 layout_mode = 2
 
-[node name="Game" type="Control" parent="SafeZone/MainLayout"]
+[node name="Game" type="Control" parent="SafeZone/MainLayout" unique_id=832476433]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="AppContainer" type="Control" parent="SafeZone/MainLayout/Game"]
+[node name="AppContainer" type="Control" parent="SafeZone/MainLayout/Game" unique_id=266480833]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -69,10 +69,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 
-[node name="HomeApp" parent="SafeZone/MainLayout/Game/AppContainer" instance=ExtResource("4_w0imb")]
+[node name="HomeApp" parent="SafeZone/MainLayout/Game/AppContainer" unique_id=790069898 instance=ExtResource("4_w0imb")]
 layout_mode = 1
 
-[node name="Overlays" type="Control" parent="SafeZone/MainLayout/Game"]
+[node name="Overlays" type="Control" parent="SafeZone/MainLayout/Game" unique_id=543723573]
 clip_contents = true
 layout_mode = 1
 anchors_preset = 15
@@ -82,31 +82,31 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="CallScreen" parent="SafeZone/MainLayout/Game/Overlays" instance=ExtResource("3_5vu0n")]
+[node name="CallScreen" parent="SafeZone/MainLayout/Game/Overlays" unique_id=1567066686 instance=ExtResource("3_5vu0n")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
-[node name="NotificationBanner" parent="SafeZone/MainLayout/Game/Overlays" instance=ExtResource("4_rhpyp")]
+[node name="NotificationBanner" parent="SafeZone/MainLayout/Game/Overlays" unique_id=440635587 instance=ExtResource("4_rhpyp")]
 unique_name_in_owner = true
 layout_mode = 1
 
-[node name="BottomBar" type="PanelContainer" parent="SafeZone/MainLayout"]
+[node name="BottomBar" type="PanelContainer" parent="SafeZone/MainLayout" unique_id=432315393]
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0xm2m")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SafeZone/MainLayout/BottomBar"]
+[node name="HBoxContainer" type="HBoxContainer" parent="SafeZone/MainLayout/BottomBar" unique_id=1596420860]
 layout_mode = 2
 
-[node name="BackButton" type="Button" parent="SafeZone/MainLayout/BottomBar/HBoxContainer"]
+[node name="BackButton" type="Button" parent="SafeZone/MainLayout/BottomBar/HBoxContainer" unique_id=1437213379]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 icon = ExtResource("6_wsokd")
 icon_alignment = 1
 
-[node name="HomeButton" type="Button" parent="SafeZone/MainLayout/BottomBar/HBoxContainer"]
+[node name="HomeButton" type="Button" parent="SafeZone/MainLayout/BottomBar/HBoxContainer" unique_id=530750080]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -114,7 +114,7 @@ focus_mode = 0
 icon = ExtResource("7_5vu0n")
 icon_alignment = 1
 
-[node name="RecentButton3" type="Button" parent="SafeZone/MainLayout/BottomBar/HBoxContainer"]
+[node name="RecentButton3" type="Button" parent="SafeZone/MainLayout/BottomBar/HBoxContainer" unique_id=1064752370]
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
