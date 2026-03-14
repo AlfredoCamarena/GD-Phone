@@ -19,9 +19,10 @@ func _ready() -> void:
 
 
 func _get_cell_width() -> float:
+	const SIDE_MARGINS: int = 2
 	var columns := photo_grid.columns
 	var screen_width := get_parent_area_size().x
-	var margins_width :=  margin_container.get_theme_constant(&"margin_left") * 2
+	var margins_width :=  margin_container.get_theme_constant(&"margin_left") * SIDE_MARGINS
 	var grid_separation := photo_grid.get_theme_constant(&"h_separation") * (columns - 1)
 	return (screen_width - margins_width - grid_separation) / columns
 
@@ -29,7 +30,7 @@ func _get_cell_width() -> float:
 func _load_unlocked_photos() -> void:
 	for child in photo_grid.get_children():
 		child.queue_free()
-	
+
 	for photo_data in PlayerData.unlocked_photos:
 		_create_thumbnail(photo_data)
 

@@ -11,7 +11,8 @@ const MEDIA_PLAY_ICON := preload("uid://cgvlgswhkb262")
 @onready var play_button: Button = $Content/AudioUI/PlayButton
 @onready var audio_slider: HSlider = %AudioSlider
 
-@onready var max_allowed_width := get_viewport_rect().size.x * 0.75 # 75% del ancho de pantalla
+@export var max_width_ratio: float = 0.75
+@onready var max_allowed_width: float = get_viewport_rect().size.x * max_width_ratio
 
 var saved_playback_pos: float = 0.0
 var is_dragging_slider: bool = false
@@ -20,7 +21,7 @@ func setup(msg: String, audio: AudioStream, photo:Texture2D) -> void:
 	message_label.text = msg
 	photo_rect.texture = photo
 	audio_player.stream = audio
-	
+
 	_handle_label_autowrap()
 	_handle_photo_logic()
 	_handle_audio_player_logic()
@@ -43,11 +44,11 @@ func _handle_label_autowrap() -> void:
 	if message_label.text.is_empty():
 		message_label.hide()
 		return
-	
+
 	var font := message_label.get_theme_font("font")
 	var font_size := message_label.get_theme_font_size("font_size")
 	var text_size := font.get_string_size(message_label.text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size)
-	
+
 	if text_size.x > max_allowed_width:
 		message_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		message_label.custom_minimum_size.x = max_allowed_width
@@ -60,10 +61,10 @@ func _handle_photo_logic() -> void:
 	if photo_rect.texture == null:
 		photo_rect.hide()
 		return
-	
+
 	var img_size := photo_rect.texture.get_size()
 	var aspect := img_size.y / img_size.x
-	
+
 	photo_rect.custom_minimum_size.x = max_allowed_width
 	photo_rect.custom_minimum_size.y = max_allowed_width * aspect
 
@@ -72,9 +73,9 @@ func _handle_audio_player_logic() -> void:
 	if audio_player.stream == null:
 		audio_ui.hide()
 		return
-	
+
 	audio_ui.custom_minimum_size.x = max_allowed_width
-	
+
 	audio_slider.max_value = audio_player.stream.get_length()
 
 
