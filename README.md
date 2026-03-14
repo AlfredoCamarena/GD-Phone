@@ -23,7 +23,7 @@ The project is currently in early development. The focus is on building the core
 - **Branching Narrative:** Support for player choices that dynamically alter the conversation flow.
 - **Linked List Logic:** Messages can trigger subsequent messages automatically or wait for player input.
 
-## 🗺️ Roadmap (Phase 1)
+## Roadmap (Phase 1)
 
 - [x] Core OS UI & Notch Handling
 - [x] Chat App (Reading & Branching Choices)
@@ -33,7 +33,7 @@ The project is currently in early development. The focus is on building the core
 - [x] Notification System
 - [ ] Web Browser Simulation
 
-## 🚀 Getting Started
+## Getting Started
 
 >Note: This workflow is experimental and will likely change as the template evolves.
 
@@ -54,7 +54,7 @@ The template uses a data-driven approach. You don't need to touch the scripts to
 
 4. **Run:** The system automatically loads `ChatData` files from the `GameContent/Data_Chats` folder and populates the contact list.
 
-## 📂 Project Structure
+## Project Structure
 
 - `_Assets/`: Images, Fonts, and Icons for the system OS.
 - `_System/`: Contains the system logic (Scripts, Base Scenes, System definitions). **Don't touch this if you are just writing the story.**
@@ -63,10 +63,10 @@ The template uses a data-driven approach. You don't need to touch the scripts to
   - `Assets/`: Story-specific assets like Images or Audios.
   - `Data/`: `.tres` resources like `ChatData`, `MessageData` or `PhotoData`
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
