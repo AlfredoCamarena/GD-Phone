@@ -12,6 +12,7 @@ signal call_ended
 @onready var accept_button: Button = %AcceptButton
 @onready var ringtone_player: AudioStreamPlayer = %RingtonePlayer
 @onready var voice_player: AudioStreamPlayer = %VoicePlayer
+@export var auto_hangup_delay: float = 1.0
 
 var is_active_call := false
 var call_duration := 0.0
@@ -21,9 +22,9 @@ func start_call(contact: ContactData, voice_audio: AudioStream) -> void:
 	name_label.text = contact.name
 	if contact.avatar:
 		photo_rect.texture = contact.avatar
-	
+
 	_reset_ui()
-	
+
 	show()
 	ringtone_player.play()
 
@@ -46,8 +47,8 @@ func _process(delta: float) -> void:
 	if is_active_call:
 		call_duration += delta
 		timer_label.text = _format_time(call_duration)
-		
-		if not voice_player.playing and call_duration > 1.0:
+
+		if not voice_player.playing and call_duration > auto_hangup_delay:
 			_on_decline()
 
 
@@ -55,7 +56,7 @@ func _reset_ui() -> void:
 	is_active_call = false
 	call_duration = 0.0
 	timer_label.text = _format_time(call_duration)
-	
+
 	timer_label.hide()
 	status_label.text = "is calling"
 	status_label.show()
@@ -72,14 +73,14 @@ func _format_time(seconds: float) -> String:
 func _on_accept() -> void:
 	ringtone_player.stop()
 	call_accepted.emit()
-	
+
 	is_active_call = true
 	set_process(true)
-	
+
 	accept_button.hide()
 	status_label.hide()
 	timer_label.show()
-	
+
 	voice_player.play()
 
 
