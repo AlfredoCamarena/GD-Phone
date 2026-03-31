@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b8bute0qrgh1t"]
+
+[ext_resource type="Script" uid="uid://c7dv0i3ym0p36" path="res://Apps/3_WebBrowser/BookmarkTile/bookmark_tile.gd" id="1_cbjxt"]
+
+[node name="BookmarkTile" type="Button" unique_id=1009442996]
+custom_minimum_size = Vector2(200, 200)
+offset_right = 8.0
+offset_bottom = 8.0
+icon_alignment = 1
+vertical_icon_alignment = 0
+script = ExtResource("1_cbjxt")
