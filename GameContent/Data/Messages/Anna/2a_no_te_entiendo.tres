@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MessageData" load_steps=7 format=3 uid="uid://bkur7j11e6inq"]
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://bkur7j11e6inq"]
 
 [ext_resource type="Texture2D" uid="uid://1o7wvfa15rv8" path="res://GameContent/Assets/Images/_default_wallpaper.png" id="1_eswhr"]
 [ext_resource type="Resource" uid="uid://gy72o7xq1lnu" path="res://GameContent/Data/Events/UnlockPhoto/test_unlock_photo.tres" id="2_eswhr"]

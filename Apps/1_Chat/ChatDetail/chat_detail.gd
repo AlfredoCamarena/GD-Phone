@@ -49,7 +49,7 @@ func add_message_bubble(msg_data: MessageData) -> void:
 		bubble = BUBBLE_OTHER.instantiate() as ChatBubble
 
 	messages_container.add_child(bubble)
-	bubble.setup(msg_data.text, msg_data.audio, msg_data.image)
+	bubble.setup(msg_data.text, msg_data.audio, msg_data.image, msg_data.link)
 
 	if not msg_data.reply_options.is_empty():
 		show_options(msg_data.reply_options)

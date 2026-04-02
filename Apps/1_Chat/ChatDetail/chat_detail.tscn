@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6slh871de23t"]
+[gd_scene format=3 uid="uid://c6slh871de23t"]
 
 [ext_resource type="Script" uid="uid://drj56ojjrpoti" path="res://Apps/1_Chat/ChatDetail/chat_detail.gd" id="1_bkvpm"]
 [ext_resource type="Texture2D" uid="uid://ds7ic48ku3bl2" path="res://_Assets/Image/NavBar128x128/nav_back.png" id="2_o77o1"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://psfg7gbmafvf" path="res://_Assets/Image/Chat 96x96/voice_call.png" id="5_6xbe8"]
 [ext_resource type="Texture2D" uid="uid://3ccjf4vdc77e" path="res://_Assets/Image/Chat 96x96/option_dots.png" id="6_4sh2e"]
 
-[node name="ChatDetail" type="Control"]
+[node name="ChatDetail" type="Control" unique_id=130452937]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_bkvpm")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="." unique_id=168335442]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +26,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.71488535, 0.592703, 0.58078104, 1)
 
-[node name="MainLayout" type="VBoxContainer" parent="."]
+[node name="MainLayout" type="VBoxContainer" parent="." unique_id=174814311]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,16 +34,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Header" type="PanelContainer" parent="MainLayout"]
+[node name="Header" type="PanelContainer" parent="MainLayout" unique_id=729956373]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainLayout/Header"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainLayout/Header" unique_id=1807808701]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 
-[node name="BackButton" type="Button" parent="MainLayout/Header/HBoxContainer"]
+[node name="BackButton" type="Button" parent="MainLayout/Header/HBoxContainer" unique_id=1828378018]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
@@ -52,7 +52,7 @@ size_flags_vertical = 4
 focus_mode = 0
 flat = true
 
-[node name="Icon" type="TextureRect" parent="MainLayout/Header/HBoxContainer/BackButton"]
+[node name="Icon" type="TextureRect" parent="MainLayout/Header/HBoxContainer/BackButton" unique_id=113370872]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 0
 offset_right = 40.0
@@ -60,7 +60,7 @@ offset_bottom = 40.0
 texture = ExtResource("2_o77o1")
 expand_mode = 1
 
-[node name="Avatar" type="TextureRect" parent="MainLayout/Header/HBoxContainer"]
+[node name="Avatar" type="TextureRect" parent="MainLayout/Header/HBoxContainer" unique_id=1104010259]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
@@ -68,43 +68,43 @@ size_flags_vertical = 4
 texture = ExtResource("3_w0bou")
 expand_mode = 1
 
-[node name="NameLabel" type="Label" parent="MainLayout/Header/HBoxContainer"]
+[node name="NameLabel" type="Label" parent="MainLayout/Header/HBoxContainer" unique_id=520388853]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 text = "Nombre de Contacto"
 
-[node name="RightIconsContainer" type="HBoxContainer" parent="MainLayout/Header/HBoxContainer"]
+[node name="RightIconsContainer" type="HBoxContainer" parent="MainLayout/Header/HBoxContainer" unique_id=814350925]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 
-[node name="VideoIcon" type="TextureRect" parent="MainLayout/Header/HBoxContainer/RightIconsContainer"]
+[node name="VideoIcon" type="TextureRect" parent="MainLayout/Header/HBoxContainer/RightIconsContainer" unique_id=279895021]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 texture = ExtResource("4_32lo3")
 expand_mode = 1
 
-[node name="CallIcon" type="TextureRect" parent="MainLayout/Header/HBoxContainer/RightIconsContainer"]
+[node name="CallIcon" type="TextureRect" parent="MainLayout/Header/HBoxContainer/RightIconsContainer" unique_id=766156553]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 texture = ExtResource("5_6xbe8")
 expand_mode = 1
 
-[node name="OptionsIcon" type="TextureRect" parent="MainLayout/Header/HBoxContainer/RightIconsContainer"]
+[node name="OptionsIcon" type="TextureRect" parent="MainLayout/Header/HBoxContainer/RightIconsContainer" unique_id=960500539]
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 2
 texture = ExtResource("6_4sh2e")
 expand_mode = 1
 
-[node name="MessageScroll" type="ScrollContainer" parent="MainLayout"]
+[node name="MessageScroll" type="ScrollContainer" parent="MainLayout" unique_id=1284657064]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="MarginContainer" type="MarginContainer" parent="MainLayout/MessageScroll"]
+[node name="MarginContainer" type="MarginContainer" parent="MainLayout/MessageScroll" unique_id=726996248]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -113,7 +113,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="MessagesContainer" type="VBoxContainer" parent="MainLayout/MessageScroll/MarginContainer"]
+[node name="MessagesContainer" type="VBoxContainer" parent="MainLayout/MessageScroll/MarginContainer" unique_id=2140566019]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -121,15 +121,15 @@ size_flags_vertical = 3
 theme_override_constants/separation = 10
 alignment = 2
 
-[node name="InputArea" type="PanelContainer" parent="MainLayout"]
+[node name="InputArea" type="PanelContainer" parent="MainLayout" unique_id=1540371141]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="KeyboardInputContainer" type="HBoxContainer" parent="MainLayout/InputArea"]
+[node name="KeyboardInputContainer" type="HBoxContainer" parent="MainLayout/InputArea" unique_id=1733310554]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="TypeBox" type="LineEdit" parent="MainLayout/InputArea/KeyboardInputContainer"]
+[node name="TypeBox" type="LineEdit" parent="MainLayout/InputArea/KeyboardInputContainer" unique_id=635378590]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -137,13 +137,13 @@ placeholder_text = "Escribe tu respuesta..."
 flat = true
 caret_blink = true
 
-[node name="SendButton" type="Button" parent="MainLayout/InputArea/KeyboardInputContainer"]
+[node name="SendButton" type="Button" parent="MainLayout/InputArea/KeyboardInputContainer" unique_id=71382348]
 unique_name_in_owner = true
 layout_mode = 2
 focus_mode = 0
 icon = ExtResource("4_w0bou")
 
-[node name="ChoiceInputContainer" type="HBoxContainer" parent="MainLayout/InputArea"]
+[node name="ChoiceInputContainer" type="HBoxContainer" parent="MainLayout/InputArea" unique_id=567794320]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2

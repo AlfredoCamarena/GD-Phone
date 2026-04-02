@@ -1,32 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://cen32adkpntg4"]
+[gd_scene format=3 uid="uid://cen32adkpntg4"]
 
 [ext_resource type="Script" uid="uid://dxa71id6av5w" path="res://Apps/1_Chat/ChatBubble/chat_bubble.gd" id="1_kw4iq"]
 [ext_resource type="Texture2D" uid="uid://cgvlgswhkb262" path="res://_Assets/Image/Gallery 128x128/media_play.png" id="2_mxkyg"]
+[ext_resource type="Texture2D" uid="uid://fxlrkw0hkdyb" path="res://icon.svg" id="3_g3kok"]
 
-[node name="ChatBubble" type="PanelContainer"]
+[node name="ChatBubble" type="PanelContainer" unique_id=1732346655]
 offset_right = 148.0
 offset_bottom = 23.0
 script = ExtResource("1_kw4iq")
 
-[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="." unique_id=91383686]
 unique_name_in_owner = true
 
-[node name="Content" type="VBoxContainer" parent="."]
+[node name="Content" type="VBoxContainer" parent="." unique_id=942318956]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="MessageLabel" type="Label" parent="Content"]
+[node name="MessageLabel" type="Label" parent="Content" unique_id=508942912]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "Mensaje de prueba"
 
-[node name="AudioUI" type="HBoxContainer" parent="Content"]
+[node name="AudioUI" type="HBoxContainer" parent="Content" unique_id=1602163736]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
-[node name="PlayButton" type="Button" parent="Content/AudioUI"]
+[node name="PlayButton" type="Button" parent="Content/AudioUI" unique_id=1507590665]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 focus_mode = 0
@@ -35,14 +36,22 @@ icon = ExtResource("2_mxkyg")
 flat = true
 expand_icon = true
 
-[node name="AudioSlider" type="HSlider" parent="Content/AudioUI"]
+[node name="AudioSlider" type="HSlider" parent="Content/AudioUI" unique_id=751963209]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="PhotoRect" type="TextureRect" parent="Content"]
+[node name="PhotoRect" type="TextureRect" parent="Content" unique_id=1386273177]
 unique_name_in_owner = true
 layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
+
+[node name="LinkButton" type="Button" parent="Content" unique_id=1761782018]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Titulo"
+icon = ExtResource("3_g3kok")
+icon_alignment = 1
+vertical_icon_alignment = 0

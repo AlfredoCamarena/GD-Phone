@@ -1,3 +1,4 @@
+class_name WebBrowserApp
 extends Control
 
 @onready var back_button: Button = %BackButton
