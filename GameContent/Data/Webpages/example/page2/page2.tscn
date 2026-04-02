@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d11rsi4exrei5"]
 
 [ext_resource type="Script" uid="uid://c1126e7766382" path="res://GameContent/Data/Webpages/example/example.gd" id="1_6ifau"]
+[ext_resource type="Resource" uid="uid://bl33yeocr7lh5" path="res://GameContent/Data/Events/IncomingCall/test_call.tres" id="2_ym3n7"]
 
 [node name="Page2" type="Control" unique_id=1970516370]
 layout_mode = 3
@@ -11,6 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6ifau")
 url = "page1.com"
+event = ExtResource("2_ym3n7")
 metadata/_custom_type_script = "uid://58fb3lgeism6"
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=967928187]
@@ -35,3 +37,8 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "IR A PAGINA 1"
+
+[node name="Button2" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1870607250]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "ACTIVAR EVENTO"
