@@ -1,8 +1,11 @@
 extends Node
 
 var unlocked_photos: Array[PhotoData]
-#TODO: Improve webpage example
-var unlocked_webpages: Array[WebpageData] = [preload("uid://cdvpujykux1pc"), preload("uid://cxbcc7gfhusea")]
+#TODO: Remove dummy pages before pushing
+var unlocked_webpages: Array[WebpageData] = [
+	preload("uid://da6j7k6txtj65"),
+	preload("uid://b5x5vxmwbg3w")
+]
 
 signal photo_unlocked(new_photo: PhotoData)
 signal webpage_unlocked(new_webpage: WebpageData)

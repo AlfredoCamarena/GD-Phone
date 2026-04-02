@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://d11rsi4exrei5"]
+
+[ext_resource type="Script" uid="uid://c1126e7766382" path="res://GameContent/Data/Webpages/example/example.gd" id="1_6ifau"]
+
+[node name="Page2" type="Control" unique_id=1970516370]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6ifau")
+metadata/_custom_type_script = "uid://58fb3lgeism6"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=967928187]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=499111882]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=282258874]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "EN PAGINA 2"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=836776709]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "IR A PAGINA 1"
