@@ -16,7 +16,7 @@ var current_webpage_data: WebpageData
 func load_webpage(data: WebpageData) -> void:
 	current_webpage_data = data
 	url_label.text = data.url
-	_navigate_to_scene(data.home_page_scene)
+	_navigate_to_scene(data.scene)
 
 
 func _ready() -> void:
@@ -75,9 +75,9 @@ func _clear_page_container() -> void:
 
 func _instantiate_page(scene: PackedScene) -> void:
 	var page_instance := scene.instantiate() as WebPage
-	page_container.add_child(page_instance)	
-	page_instance.navigate_to_page_requested.connect(func (page_scene: PackedScene) -> void:
-		_navigate_to_scene(page_scene))
+	page_container.add_child(page_instance)
+	page_instance.navigate_to_url_requested.connect(func (url: String) -> void:
+		_navigate_to_scene(WebManager.get_url_data(url).scene))
 	page_instance.trigger_event_requested.connect(func (event: StoryEvent) -> void:
 		EventManager.execute(event))
 

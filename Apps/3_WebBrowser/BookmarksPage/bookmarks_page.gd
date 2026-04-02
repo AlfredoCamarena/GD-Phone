@@ -24,7 +24,7 @@ func _create_bookmark_tile(webpage: WebpageData) -> void:
 	bookmarks_grid.add_child(tile)
 	tile.setup(webpage.icon, webpage.title)
 	tile.pressed.connect(func() -> void:
-		navigate_to_page_requested.emit(webpage.home_page_scene))
+		navigate_to_url_requested.emit(webpage.url))
 
 
 func _on_webpage_unlocked(_new_webpage: WebpageData) -> void:

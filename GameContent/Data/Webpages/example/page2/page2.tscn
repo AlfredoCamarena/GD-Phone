@@ -10,6 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6ifau")
+url = "page1.com"
 metadata/_custom_type_script = "uid://58fb3lgeism6"
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=967928187]
@@ -31,7 +32,6 @@ text = "EN PAGINA 2"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=836776709]
-visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "IR A PAGINA 1"

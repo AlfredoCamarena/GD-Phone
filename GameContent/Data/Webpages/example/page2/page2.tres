@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="WebpageData" format=3 uid="uid://b5x5vxmwbg3w"]
 
-[ext_resource type="PackedScene" uid="uid://d11rsi4exrei5" path="res://GameContent/Data/Webpages/example/page2/page2.tscn" id="1_lru4n"]
 [ext_resource type="Texture2D" uid="uid://bi1tc5ippyxqa" path="res://_Assets/Image/Chat 96x96/emoji_smile.png" id="1_pq406"]
 [ext_resource type="Script" uid="uid://3kiq326twa6d" path="res://_System/Resources/WebpageData.gd" id="1_t0mtc"]
+[ext_resource type="PackedScene" uid="uid://d11rsi4exrei5" path="res://GameContent/Data/Webpages/example/page2/page2.tscn" id="2_lru4n"]
 
 [resource]
 script = ExtResource("1_t0mtc")
 title = "Pagina 2"
-url = "www.pag2.com"
+url = "page2.com"
 icon = ExtResource("1_pq406")
-home_page_scene = ExtResource("1_lru4n")
+scene = ExtResource("2_lru4n")
 metadata/_custom_type_script = "uid://3kiq326twa6d"
