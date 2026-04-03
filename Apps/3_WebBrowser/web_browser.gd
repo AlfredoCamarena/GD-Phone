@@ -78,7 +78,7 @@ func _instantiate_page(scene: PackedScene) -> void:
 	var page_instance := scene.instantiate() as WebPage
 	page_container.add_child(page_instance)
 	page_instance.navigate_to_url_requested.connect(func (url: String) -> void:
-		_navigate_to_scene(WebManager.get_url_data(url).scene))
+		load_webpage(WebManager.get_url_data(url)))
 	page_instance.trigger_event_requested.connect(func (event: StoryEvent) -> void:
 		EventManager.execute(event))
 
