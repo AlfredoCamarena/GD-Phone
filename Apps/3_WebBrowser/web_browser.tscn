@@ -59,12 +59,12 @@ layout_mode = 2
 icon = ExtResource("4_ulcsk")
 flat = true
 
-[node name="UrlLabel" type="Label" parent="VBoxContainer/Navbar/HBoxContainer" unique_id=198208624]
+[node name="UrlLineEdit" type="LineEdit" parent="VBoxContainer/Navbar/HBoxContainer" unique_id=128307480]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 64
-horizontal_alignment = 1
+placeholder_text = "ingresar dirección"
 
 [node name="PageContainer" type="Control" parent="VBoxContainer" unique_id=1259397540]
 unique_name_in_owner = true

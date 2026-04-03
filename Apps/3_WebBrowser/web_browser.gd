@@ -4,7 +4,7 @@ extends Control
 @onready var back_button: Button = %BackButton
 @onready var forward_button: Button = %ForwardButton
 @onready var home_button: Button = %HomeButton
-@onready var url_label: Label = %UrlLabel
+@onready var url_line_edit: LineEdit = %UrlLineEdit
 @onready var page_container: Control = %PageContainer
 
 @export var home_scene: PackedScene
@@ -33,7 +33,14 @@ func _ready() -> void:
 	back_button.pressed.connect(_go_back)
 	forward_button.pressed.connect(_go_forward)
 	home_button.pressed.connect(_go_home)
+	url_line_edit.text_submitted.connect(_resolve_url)
 	_go_home()
+
+
+func _resolve_url(url: String) -> void:
+	if url.is_empty():
+		return
+	navigate_to_page(WebManager.get_url_data(url))
 
 
 func _go_home() -> void:
@@ -56,7 +63,7 @@ func _go_forward() -> void:
 
 func _display_page(data: WebpageData) -> void:
 	current_webpage_data = data
-	url_label.text = data.url if data else ""
+	url_line_edit.text = data.url if data else ""
 	
 	for child in page_container.get_children():
 		child.queue_free()
@@ -69,8 +76,7 @@ func _display_page(data: WebpageData) -> void:
 func _instantiate_page(scene: PackedScene) -> void:
 	var page_instance := scene.instantiate() as WebPage
 	page_container.add_child(page_instance)
-	page_instance.navigate_to_url_requested.connect(func (url: String) -> void:
-		navigate_to_page(WebManager.get_url_data(url)))
+	page_instance.navigate_to_url_requested.connect(_resolve_url)
 	page_instance.trigger_event_requested.connect(func (event: StoryEvent) -> void:
 		EventManager.execute(event))
 
