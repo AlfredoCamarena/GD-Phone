@@ -86,6 +86,7 @@ func _handle_audio_player_logic() -> void:
 
 func _handle_link_logic() -> void:
 	if link_data == null:
+		link_button.hide()
 		return
 	
 	link_button.icon = link_data.icon
