@@ -37,7 +37,7 @@ func _clear_app_container() -> void:
 func _open_webpage(data: WebpageData) -> void:
 	const WEB_BROWSER_SCENE = preload("uid://c15x2ptcs1e2l")
 	var browser := _open_app(WEB_BROWSER_SCENE) as WebBrowserApp
-	browser.load_webpage(data)
+	browser.navigate_to_page(data)
 
 
 func _on_event_call(contact: ContactData, voice_audio: AudioStream) -> void:
