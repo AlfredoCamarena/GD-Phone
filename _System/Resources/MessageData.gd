@@ -10,6 +10,7 @@ enum Sender { ME, OTHER }
 @export_multiline var text: String = ""
 @export var image: Texture2D
 @export var audio: AudioStream
+@export var link: WebpageData
 
 @export_group("Comportamiento")
 @export var delay: float = 1.5

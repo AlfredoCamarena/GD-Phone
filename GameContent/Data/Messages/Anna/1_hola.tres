@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="MessageData" load_steps=9 format=3 uid="uid://w3jk8n06ho3m"]
+[gd_resource type="Resource" script_class="MessageData" format=3 uid="uid://w3jk8n06ho3m"]
 
 [ext_resource type="Script" uid="uid://bpse7if2ak65s" path="res://_System/Resources/ReplyOption.gd" id="1_36sm3"]
 [ext_resource type="AudioStream" uid="uid://c07yxhwkd0ixe" path="res://GameContent/Assets/Audios/Anna/AnnaTest.ogg" id="1_pq36y"]
+[ext_resource type="Resource" uid="uid://b5x5vxmwbg3w" path="res://GameContent/Data/Webpages/example/page2/page2.tres" id="2_evpg7"]
 [ext_resource type="Resource" uid="uid://2vka83hve84a" path="res://GameContent/Data/Events/NewNotification/test_notification.tres" id="2_gpul6"]
 [ext_resource type="Script" uid="uid://dbte7kxlkuhtf" path="res://_System/Resources/MessageData.gd" id="2_jwdeb"]
 [ext_resource type="Resource" uid="uid://bkur7j11e6inq" path="res://GameContent/Data/Messages/Anna/2a_no_te_entiendo.tres" id="4_gpul6"]
@@ -22,6 +23,7 @@ metadata/_custom_type_script = "uid://bpse7if2ak65s"
 [resource]
 script = ExtResource("2_jwdeb")
 audio = ExtResource("1_pq36y")
+link = ExtResource("2_evpg7")
 reply_options = Array[ExtResource("1_36sm3")]([SubResource("Resource_36sm3"), SubResource("Resource_pq36y")])
 on_read_event = ExtResource("2_gpul6")
 metadata/_custom_type_script = "uid://dbte7kxlkuhtf"

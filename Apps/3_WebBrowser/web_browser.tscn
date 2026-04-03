@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://c15x2ptcs1e2l"]
+
+[ext_resource type="Script" uid="uid://chy47kq2qxujh" path="res://Apps/3_WebBrowser/web_browser.gd" id="1_6hka2"]
+[ext_resource type="Texture2D" uid="uid://cpkcaj3xu8qrp" path="res://_Assets/Image/WebBrowser 96x96/browse_back.png" id="2_sfj5a"]
+[ext_resource type="PackedScene" uid="uid://dxouhefyx01yy" path="res://Apps/3_WebBrowser/BookmarksPage/bookmarks_page.tscn" id="2_ukcvn"]
+[ext_resource type="Texture2D" uid="uid://c6ueebsoilfob" path="res://_Assets/Image/WebBrowser 96x96/browse_forward.png" id="3_ulcsk"]
+[ext_resource type="Texture2D" uid="uid://ctkm5tb4v46wq" path="res://_Assets/Image/WebBrowser 96x96/browse_home.png" id="4_ulcsk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukcvn"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.18072194, 0.18072197, 0.18072191, 1)
+
+[node name="WebBrowser" type="Control" unique_id=936850031]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6hka2")
+home_scene = ExtResource("2_ukcvn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=259853016]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Navbar" type="PanelContainer" parent="VBoxContainer" unique_id=1502583412]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ukcvn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Navbar" unique_id=1056556974]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="BackButton" type="Button" parent="VBoxContainer/Navbar/HBoxContainer" unique_id=499881918]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("2_sfj5a")
+flat = true
+
+[node name="ForwardButton" type="Button" parent="VBoxContainer/Navbar/HBoxContainer" unique_id=645201832]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("3_ulcsk")
+flat = true
+
+[node name="HomeButton" type="Button" parent="VBoxContainer/Navbar/HBoxContainer" unique_id=1446537222]
+unique_name_in_owner = true
+layout_mode = 2
+icon = ExtResource("4_ulcsk")
+flat = true
+
+[node name="UrlLineEdit" type="LineEdit" parent="VBoxContainer/Navbar/HBoxContainer" unique_id=128307480]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 64
+placeholder_text = "ingresar dirección"
+
+[node name="PageContainer" type="Control" parent="VBoxContainer" unique_id=1259397540]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3

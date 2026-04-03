@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WebpageData" format=3 uid="uid://da6j7k6txtj65"]
+
+[ext_resource type="Script" uid="uid://3kiq326twa6d" path="res://_System/Resources/WebpageData.gd" id="1_4lgqp"]
+[ext_resource type="PackedScene" uid="uid://ctr0rc70m11y5" path="res://GameContent/Data/Webpages/example/page1/page1.tscn" id="2_jhvqg"]
+[ext_resource type="Texture2D" uid="uid://fxlrkw0hkdyb" path="res://icon.svg" id="2_q48pl"]
+
+[resource]
+script = ExtResource("1_4lgqp")
+title = "Página 1"
+url = "page1.com"
+icon = ExtResource("2_q48pl")
+scene = ExtResource("2_jhvqg")
+metadata/_custom_type_script = "uid://3kiq326twa6d"
