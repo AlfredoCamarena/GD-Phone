@@ -10,6 +10,11 @@
   <img src="https://github.com/user-attachments/assets/2652e201-e6cf-4250-bf5a-7a66f3a83fed" alt="Gallery UI" width="30%"/>
 </p>
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fc5d508f-963e-40f1-8a52-8ad286806369" alt="Call UI" width="30%">
+  <img src="https://github.com/user-attachments/assets/02964240-f90e-4d3b-8b6d-2e4cd1a31cca" alt="Web Browser UI" width="30%">
+</p>
+
 An open-source template designed to create narrative "Found Phone" games (similar to *Simulacra*, *A Normal Lost Phone*, or *Duskwood*) using **Godot Engine 4**.
 
 The project is currently in early development. The focus is on building the core logic for standard apps first. Future updates will focus on UI polishing and optimizing the content creation workflow for ease of use.
@@ -23,43 +28,52 @@ The project is currently in early development. The focus is on building the core
 - **Branching Narrative:** Support for player choices that dynamically alter the conversation flow.
 - **Linked List Logic:** Messages can trigger subsequent messages automatically or wait for player input.
 
-## Roadmap (Phase 1)
+## Roadmap
 
+### Phase 1
 - [x] Core OS UI & Notch Handling
 - [x] Chat App (Reading & Branching Choices)
 - [x] Chat App (Images & Audio support)
 - [x] Photo Gallery App
 - [x] Incoming Call System
 - [x] Notification System
-- [ ] Web Browser Simulation
+- [x] Web Browser Simulation
+
+### Phase 2
+(SOON)
 
 ## Getting Started
 
 >Note: This workflow is experimental and will likely change as the template evolves.
 
-### How to Create a Conversation
-The template uses a data-driven approach. You don't need to touch the scripts to add content.
+### 1. Creating Conversations
 
-1. **Create a Message:**
-   - Right-click in FileSystem -> `New Resource` -> `MessageData`.
-   - Set the content (text/audio/image), sender (ME/OTHER), and delay.
-   
-2. **Add Choices (Optional):**
-   - In the `Reply Options` array of a message, create new `ReplyOption` resources.
-   - Link them to the *next* `MessageData` file to create branching paths.
+- **Messages:** Create a `MessageData` resource. Set text, media, sender, and delay.
+- **Branching Paths:** In any `MessageData`, add `ReplyOption` resources to the `Reply Options` array. Link each option to the next `MessageData` file.
+- **Chat Container:** Create a `ChatData` resource and drag the initial messages into the array. The system automatically populates the chat list from these files.
 
-3. **Create the Chat:**
-   - Create a new `ChatData` resource.
-   - Drag and drop your initial messages into the conversation array.
+### 2. Creating Web Pages
+The Web Browser loads actual Godot scenes, allowing for custom interaction.
 
-4. **Run:** The system automatically loads `ChatData` files from the `GameContent/Data_Chats` folder and populates the contact list.
+1. **Create the Scene:** Create a new web page scene and set its root script to extend `WebPage`.
+2. **Handle Interactivity (Signals):**
+   - **Navigate:** To go to another URL, use `navigate_to_url_requested.emit("target_url.com")`.
+   - **Trigger Events:** To trigger a story event (like a call or unlock), use `trigger_event_requested.emit(event_resource)`.
+3. **Register Page:** 
+   - Create a `WebpageData` resource pointing to your scene and giving it a URL.
+   - Register the URL in `_System/_Autoloads/web_manager.gd` under the `url_registry` dictionary.
+
+### 3. Story Events
+`StoryEvent` resources allow you to trigger actions from anywhere (e.g., from a message arrival or a button on a website).
+- **Types:** `INCOMING_CALL`, `UNLOCK_PHOTO`, `NOTIFICATION`.
+- **Usage:** Set the `Type`, the `Target Resource` (e.g., a `ContactData` for calls or `PhotoData` for unlocks), and an optional `Delay`.
 
 ## Project Structure
 
 - `_Assets/`: Images, Fonts, and Icons for the system OS.
-- `_System/`: Contains the system logic (Scripts, Base Scenes, System definitions). **Don't touch this if you are just writing the story.**
+- `_System/`: Contains the system logic (Scripts, Base Scenes, System definitions).
 - `Apps/`: Individual simulated applications (Chat, Gallery, Settings). You can create new apps and simply link them to an icon in the HomeApp.
-- `GameContent/`: **Your Playground.**
+- `GameContent/`
   - `Assets/`: Story-specific assets like Images or Audios.
   - `Data/`: `.tres` resources like `ChatData`, `MessageData` or `PhotoData`
 
