@@ -18,16 +18,6 @@
 An open-source template designed to create narrative "Found Phone" games (similar to *Simulacra*, *A Normal Lost Phone*, or *Duskwood*) using **Godot Engine 4**.
 
 The project is currently in early development. The focus is on building the core logic for standard apps first. Future updates will focus on UI polishing and optimizing the content creation workflow for ease of use.
-
-## Key Features
-
-- **Responsive UI:** Adapts to different aspect ratios.
-- **Realtime Clock:** Use the player's local time for the game.
-- **Resource-Based Storytelling:** Create conversations using `Custom Resources` (`.tres` files). No hardcoded strings.
-- **Multimedia Support:** Send and receive images and audio messages (voice notes) with playback controls.
-- **Branching Narrative:** Support for player choices that dynamically alter the conversation flow.
-- **Linked List Logic:** Messages can trigger subsequent messages automatically or wait for player input.
-
 ## Roadmap
 
 ### Phase 1
@@ -40,7 +30,18 @@ The project is currently in early development. The focus is on building the core
 - [x] Web Browser Simulation
 
 ### Phase 2
-(SOON)
+#### Improvements & Refactoring
+- [ ] Migrate chat loading to `PlayerData.gd` to treat them as unlockable and dynamic resources
+- [ ] Centralize unlock events to impact state first and then update the UI
+- [ ] Implement message tracking for persistence and visual alerts (Badges)
+- [ ] Adapt data resources to integrate with Godot's native translation system
+#### New Features
+- [ ] Save & Load System
+- [ ] Video Support
+- [ ] Lock Screen / PIN System
+- [ ] Settings App
+- [ ] Email App
+- [ ] Phone App
 
 ## Getting Started
 
